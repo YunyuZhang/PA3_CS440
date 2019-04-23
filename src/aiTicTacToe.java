@@ -32,22 +32,76 @@ public class aiTicTacToe {
 	/**
 	 * Takes a position on the Tic-Tac-Toe board and returns the number of winning rows it appears in.
 	 * @param current_position the positionTicTacToe position of the piece being placed.
+	 * @param player = 1 for player 1; player = 2 for player 2
 	 * @return Integer that shows how many winning rows the position appears in.
 	 */
-	public static int possibleWinRows(positionTicTacToe current_position){
-		List<List<positionTicTacToe>> winning_line = initializeWinningLines();
-		int counter = 0;
-		for(List<positionTicTacToe> winning_combination:winning_line){
+	public List<List<positionTicTacToe>> possibleWinLines(List<positionTicTacToe> board, int player){
+		List<List<positionTicTacToe>> possWinLines = new ArrayList<List<positionTicTacToe>>();
+		List<List<positionTicTacToe>> winning_lines = initializeWinningLines();
+		for(List<positionTicTacToe> winning_combination:winning_lines){
 			System.out.println(winning_combination);
-			System.out.println(current_position);
-			if (contain(winning_combination,current_position)){
-				counter++;
-
+			if (almostWin(board, winning_combination, player)){
+				possWinLines.add(winning_combination);
 			}
 		}
-		return counter;
-
+		return possWinLines;
 	}
+	
+	
+	public boolean almostWin(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player){
+		int count = 0;
+		int enemy;
+		
+		if(player == 1) enemy = 2;
+		else enemy = 1;
+		
+		for(positionTicTacToe position:position_list){
+			if (getStateOfPositionFromBoard(position, board) == player){
+				count++;
+			}
+			else if (getStateOfPositionFromBoard(position, board) == enemy) {
+				return false;
+			}
+		}
+		if(count == 3) return true;
+		else return false;
+	}
+	
+	public int unblockedLines(List<positionTicTacToe> board, positionTicTacToe current_position, int player) {
+		int count = 0;
+		
+		// TODO: Change into generating rows depending on current_position, rather than iterating over every winning row.
+		
+		List<List<positionTicTacToe>> possible_lines = initializeWinningLines();
+		for(List<positionTicTacToe> line:possible_lines) {
+			if(contain(line, current_position)) {
+				if(lineCount(board, line, player) >= 1) {
+					count++;
+				}
+			}
+		}
+		return count;
+	}
+	
+	public int lineCount(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player){
+		int count = 0;
+		int enemy;
+		
+		if(player == 1) enemy = 2;
+		else enemy = 1;
+		
+		for(positionTicTacToe position:position_list){
+			if (getStateOfPositionFromBoard(position, board) == player){
+				count++;
+			}
+			else if (getStateOfPositionFromBoard(position, board) == enemy) {
+				return -1;
+			}
+		}
+		return count;
+	}
+	
+	// TODO: Write a check for if enemy is about to win, AKA see if enemy has 3 positions and one empty position in a winning row
 	
 	
 	
@@ -65,8 +119,45 @@ public class aiTicTacToe {
 	 * @param player
 	 * @return
 	 */
-	public static int calcHeuristic(List<positionTicTacToe> board,int player){
+	
+	
+	public int calcHeuristic(List<positionTicTacToe> board, positionTicTacToe current_position, int player){
+		int enemy;
+		
+		if(player == 1) enemy = 2;
+		else enemy = 1;
+		
 		List<List<positionTicTacToe>> winning_line = initializeWinningLines();
+		List<List<positionTicTacToe>> ourWinLines = possibleWinLines(board, player);
+		if(!ourWinLines.isEmpty()) {
+			if(contain(ourWinLines.get(0), current_position)) {  // TODO: Must ensure that current position is always an empty position. Else this bugs out.
+				return 100;
+			}
+		}
+		
+		List<List<positionTicTacToe>> enemyWinLines = possibleWinLines(board, enemy);
+		if(!ourWinLines.isEmpty()) {
+			if(contain(enemyWinLines.get(0), current_position)) {  // TODO: Must ensure that current position is always an empty position. Else this bugs out.
+				return 50;
+			}
+			else {
+				return -50;
+			}
+		}
+		
+		
+		//TODO: The rest of this fucking shit
+		
+		
+		
+		
+		
+		return 0;
+		
+		
+		
+		
+		/*		List<List<positionTicTacToe>> winning_line = initializeWinningLines();
 		int player1_counter = 0;
 		int player2_counter = 0;
 		for(positionTicTacToe move:board){
@@ -91,7 +182,7 @@ public class aiTicTacToe {
 			}
 		}
 
-		return player1_counter - player2_counter;
+		return player1_counter - player2_counter;*/
 	}
 	
 	
@@ -108,8 +199,9 @@ public class aiTicTacToe {
 			}
 		}
 		return false;
-
 	}
+	
+	
 
 	
 	
@@ -272,7 +364,7 @@ public class aiTicTacToe {
 		positionTicTacToe test_position1 = new positionTicTacToe(0,3,2,-1);
 		positionTicTacToe test_position2 = new positionTicTacToe(1,1,1,-1);
 
-		System.out.println(possibleWinRows(test_position1));
+		//System.out.println(possibleWinLines(test_position1));
 
 	}
 }

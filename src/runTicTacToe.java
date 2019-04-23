@@ -391,7 +391,7 @@ public class runTicTacToe {
         makeMove(o1,2,test_board);
 
         printBoardTicTacToe(test_board);
-        System.out.println(aiTicTacToe.calcHeuristic(test_board,1));
+        //System.out.println(aiTicTacToe.calcHeuristic(test_board,1));
 
 
 

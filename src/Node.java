@@ -55,12 +55,14 @@ public class Node {
     }
 
     public static int minmax(Node node,int depth,boolean maximingzingPlayer){
+        Integer positive_Inf = Integer.MAX_VALUE;
+        Integer negative_Inf = Integer.MIN_VALUE;
         if (depth == 0 || node.getChildren().size() == 0){
 
             return node.getValue();
         }
         if (maximingzingPlayer){
-            int value = -9999;
+            int value = negative_Inf;
             List<Node> allChildren = node.getChildren();
             for (Node child: allChildren){
                 value = Math.max(value,minmax(child,depth-1,false));
@@ -71,7 +73,7 @@ public class Node {
 
         }
         else{
-            int value = 9999;
+            int value = positive_Inf;
             List<Node> allChildren = node.getChildren();
             for (Node child: allChildren){
                 value = Math.min(value,minmax(child,depth-1,true));
@@ -84,18 +86,58 @@ public class Node {
 
     }
 
+    public static int minmax_alphbeta(Node node,int depth,boolean maximingzingPlayer,int alpha,int beta){
+        Integer positive_Inf = Integer.MAX_VALUE;
+        Integer negative_Inf = Integer.MIN_VALUE;
+        if (depth == 0 || node.getChildren().size() == 0){
+
+            return node.getValue();
+        }
+        if (maximingzingPlayer){
+            int value = negative_Inf;
+            List<Node> allChildren = node.getChildren();
+            for (Node child: allChildren){
+                value = Math.max(value,minmax(child,depth-1,false));
+                alpha = Math.max(alpha,value);
+                if (beta <= alpha){
+                    break;
+                }
+            }
+            node.setValue(value);
+            //System.out.println(node.getValue());
+            return value;
+
+        }
+        else{
+            int value = positive_Inf;
+            List<Node> allChildren = node.getChildren();
+            for (Node child: allChildren){
+                value = Math.min(value,minmax(child,depth-1,true));
+                beta = Math.min(beta,value);
+                if (beta <= alpha){
+                    break;
+                }
+            }
+            node.setValue(value);
+            //System.out.println(node.getValue());
+            return value;
+
+        }
+
+    }
+
 
     public static void main(String [] args)
     {
-        Node root = new Node(9999);
+        Node root = new Node(-9999);
 
-        Node first_level1 = new Node(-9999);
+        Node first_level1 = new Node(9999);
         Node first_level2 = new Node(2);
         Node first_level3 = new Node(-5);
         ArrayList<Node> first_children = new ArrayList<Node>(Arrays.asList(first_level1,first_level2,first_level3) );
         root.addChildren(first_children);
 
-        Node second_level1 = new Node(9999);
+        Node second_level1 = new Node(-9999);
         Node second_level2 = new Node(6);
         Node second_level3 = new Node(3);
         ArrayList<Node> second_children = new ArrayList<Node>(Arrays.asList(second_level1,second_level2,second_level3) );
@@ -110,6 +152,8 @@ public class Node {
         //printTree(root," ");
         //root.printTree(root);
         System.out.println("min max value " + minmax(root,3,true));
+        System.out.println("min max value " + minmax_alphbeta(root,3,true,Integer.MAX_VALUE,Integer.MIN_VALUE));
+
 
 
     }

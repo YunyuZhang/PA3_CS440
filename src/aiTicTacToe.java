@@ -2,7 +2,12 @@ import java.util.*;
 public class aiTicTacToe {
 
 	public int player; //1 for player 1 and 2 for player 2
-	private static int getStateOfPositionFromBoard(positionTicTacToe position, List<positionTicTacToe> board)
+
+	public List<List<positionTicTacToe>> wl = initializeWinningLines();
+	
+	
+	
+	private int getStateOfPositionFromBoard(positionTicTacToe position, List<positionTicTacToe> board)
 	{
 		//a helper function to get state of a certain position in the Tic-Tac-Toe board by given position TicTacToe
 		int index = position.x*16+position.y*4+position.z;
@@ -36,18 +41,19 @@ public class aiTicTacToe {
 	 */
 	public static List<List<positionTicTacToe>> possibleWinLines(List<positionTicTacToe> board, int player){
 		List<List<positionTicTacToe>> possWinLines = new ArrayList<List<positionTicTacToe>>();
-		List<List<positionTicTacToe>> winning_lines = initializeWinningLines();
-		for(List<positionTicTacToe> winning_combination:winning_lines){
+
+		for(List<positionTicTacToe> winning_combination:wl){
 			//System.out.println(winning_combination);
-			if (almostWin(board, winning_combination, player)){
+			if (almostWinInLine(board, winning_combination, player)){
+
 				possWinLines.add(winning_combination);
 			}
 		}
 		return possWinLines;
 	}
 	
-	
-	public static boolean almostWin(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player){
+	public boolean almostWinInLine(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player){
+
 		int count = 0;
 		int enemy;
 		
@@ -63,7 +69,28 @@ public class aiTicTacToe {
 			}
 		}
 		if(count == 3) return true;
-		else return false;
+		return false;
+	}
+	
+	
+	public boolean hasWon() {
+		
+		// TODO: Still working on this rn.
+		
+		return false;
+	}
+	
+	public boolean hasWonInLine(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player) {
+		int count = 0;
+		
+		for(positionTicTacToe position:position_list) {
+			if (getStateOfPositionFromBoard(position, board) == player){
+				count++;
+			}
+		}
+			
+		if(count == 4) return true;
+		return false;
 	}
 	
 	
@@ -78,9 +105,7 @@ public class aiTicTacToe {
 		int count = 0;
 		
 		// TODO: Change into generating rows depending on current_position, rather than iterating over every winning row.
-		
-		List<List<positionTicTacToe>> possible_lines = initializeWinningLines();
-		for(List<positionTicTacToe> line:possible_lines) {
+		for(List<positionTicTacToe> line:wl) {
 			if(contain(line, current_position)) {
 				if(lineCount(board, line, player) >= 0) {
 					count++;
@@ -154,6 +179,7 @@ public class aiTicTacToe {
 		
 		List<List<positionTicTacToe>> enemyWinLines = possibleWinLines(board, enemy);
 		if(!enemyWinLines.isEmpty()) {
+      
 			System.out.println("works 2");
 			// Will only ever consider the first result of this list, because the game will end regardless of what line is looked at.
 			if(contain(enemyWinLines.get(0), current_position)) {  // TODO: Must ensure that current position is always an empty position. Else this bugs out.
@@ -166,11 +192,12 @@ public class aiTicTacToe {
 		}
 		
 		int count = unblockedLines(board, current_position, player);
-		//
+
 		System.out.println("before: "+ count);
 		List<List<positionTicTacToe>> winning_lines = initializeWinningLines();
 		
-		for(List<positionTicTacToe> line:winning_lines) {
+		for(List<positionTicTacToe> line:wl) {
+
 			if(contain(line, current_position)) {
 				int linePoints = lineCount(board, line, player);
 				if(linePoints > 0) {

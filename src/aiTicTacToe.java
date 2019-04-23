@@ -25,21 +25,47 @@ public class aiTicTacToe {
 			
 		
 	}
-	public static int heuristic(positionTicTacToe current_position){
+	
+	
+	// Renamed heuristic() function to possibleWinRows() to more accurately describe its function
+	//TODO: Change possibleWinRows to make it return the winning rows that the position appears in
+	/**
+	 * Takes a position on the Tic-Tac-Toe board and returns the number of winning rows it appears in.
+	 * @param current_position the positionTicTacToe position of the piece being placed.
+	 * @return Integer that shows how many winning rows the position appears in.
+	 */
+	public static int possibleWinRows(positionTicTacToe current_position){
 		List<List<positionTicTacToe>> winning_line = initializeWinningLines();
 		int counter = 0;
 		for(List<positionTicTacToe> winning_combination:winning_line){
 			System.out.println(winning_combination);
 			System.out.println(current_position);
 			if (contain(winning_combination,current_position)){
-				counter ++;
+				counter++;
 
 			}
 		}
 		return counter;
 
 	}
-	public static int calculate_heuristic(List<positionTicTacToe> board,int player){
+	
+	
+	
+	/* TODO: Hash out the actual heuristic values given by the calcHeuristic() function.
+	   Ideas:
+	   - Prioritize Winning Move > Opponent's Winning Move (us losing) > Unblocked Winning Rows > Next best random move
+	   - Prioritize moves that block an enemy's winning row(s)
+	*/
+	
+	// Renamed calculate_heuristic() to calcHeuristic()
+	
+	/**
+	 * 
+	 * @param board
+	 * @param player
+	 * @return
+	 */
+	public static int calcHeuristic(List<positionTicTacToe> board,int player){
 		List<List<positionTicTacToe>> winning_line = initializeWinningLines();
 		int player1_counter = 0;
 		int player2_counter = 0;
@@ -66,10 +92,15 @@ public class aiTicTacToe {
 		}
 
 		return player1_counter - player2_counter;
-
-
-
 	}
+	
+	
+	/**
+	 * Given the list of four positions that make up a row, check to see if our given position is in that list.
+	 * @param position_list
+	 * @param current_position
+	 * @return
+	 */
 	public static boolean contain(List<positionTicTacToe> position_list,positionTicTacToe current_position){
 		for(positionTicTacToe position_spot:position_list){
 			if (position_spot.x == current_position.x && position_spot.y == current_position.y && position_spot.z == current_position.z){
@@ -80,6 +111,8 @@ public class aiTicTacToe {
 
 	}
 
+	
+	
 	private static List<List<positionTicTacToe>> initializeWinningLines()
 	{
 		//create a list of winning line so that the game will "brute-force" check if a player satisfied any 	winning condition(s).
@@ -239,7 +272,7 @@ public class aiTicTacToe {
 		positionTicTacToe test_position1 = new positionTicTacToe(0,3,2,-1);
 		positionTicTacToe test_position2 = new positionTicTacToe(1,1,1,-1);
 
-		System.out.println(heuristic(test_position1));
+		System.out.println(possibleWinRows(test_position1));
 
 	}
 }

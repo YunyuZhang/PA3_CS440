@@ -27,13 +27,12 @@ public class aiTicTacToe {
 	}
 	
 	
-	// Renamed heuristic() function to possibleWinRows() to more accurately describe its function
 	//TODO: Change possibleWinRows to make it return the winning rows that the position appears in
 	/**
-	 * Takes a position on the Tic-Tac-Toe board and returns the number of winning rows it appears in.
-	 * @param current_position the positionTicTacToe position of the piece being placed.
-	 * @param player = 1 for player 1; player = 2 for player 2
-	 * @return Integer that shows how many winning rows the position appears in.
+	 * Takes a Tic-Tac-Toe board and a player and returns the list of rows that the player is about to win in.
+	 * @param board is a List of positionTicTacToe that represents the board state
+	 * @param Integer player = 1 for player 1; player = 2 for player 2
+	 * @return List of a List of positionTicTacToe values, each returning a line of positions that are about to win for the player
 	 */
 	public List<List<positionTicTacToe>> possibleWinLines(List<positionTicTacToe> board, int player){
 		List<List<positionTicTacToe>> possWinLines = new ArrayList<List<positionTicTacToe>>();
@@ -67,6 +66,14 @@ public class aiTicTacToe {
 		else return false;
 	}
 	
+	
+	/**
+	 * 
+	 * @param board
+	 * @param current_position
+	 * @param player
+	 * @return
+	 */
 	public int unblockedLines(List<positionTicTacToe> board, positionTicTacToe current_position, int player) {
 		int count = 0;
 		
@@ -83,6 +90,14 @@ public class aiTicTacToe {
 		return count;
 	}
 	
+	
+	/**
+	 * LineCount counts the number of current positions that is currently occupied by the player. If another player also occupies the line, return 0.
+	 * @param board
+	 * @param position_list
+	 * @param player
+	 * @return returns 1-3 for the number of positions taken up by the player in the row. Returns 0 if all positions empty. Returns -1 if the enemy is in line.
+	 */
 	public int lineCount(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player){
 		int count = 0;
 		int enemy;
@@ -101,9 +116,7 @@ public class aiTicTacToe {
 		return count;
 	}
 	
-	// TODO: Write a check for if enemy is about to win, AKA see if enemy has 3 positions and one empty position in a winning row
-	
-	
+
 	
 	/* TODO: Hash out the actual heuristic values given by the calcHeuristic() function.
 	   Ideas:
@@ -126,17 +139,21 @@ public class aiTicTacToe {
 		
 		if(player == 1) enemy = 2;
 		else enemy = 1;
-		
-		List<List<positionTicTacToe>> winning_line = initializeWinningLines();
+
 		List<List<positionTicTacToe>> ourWinLines = possibleWinLines(board, player);
 		if(!ourWinLines.isEmpty()) {
+			// Will only ever consider the first result of this list, because the game will end regardless of what line is looked at.
 			if(contain(ourWinLines.get(0), current_position)) {  // TODO: Must ensure that current position is always an empty position. Else this bugs out.
 				return 100;
+			}
+			else {
+				return -100;
 			}
 		}
 		
 		List<List<positionTicTacToe>> enemyWinLines = possibleWinLines(board, enemy);
 		if(!ourWinLines.isEmpty()) {
+			// Will only ever consider the first result of this list, because the game will end regardless of what line is looked at.
 			if(contain(enemyWinLines.get(0), current_position)) {  // TODO: Must ensure that current position is always an empty position. Else this bugs out.
 				return 50;
 			}
@@ -145,46 +162,19 @@ public class aiTicTacToe {
 			}
 		}
 		
+		int count = unblockedLines(board, current_position, player);
+		List<List<positionTicTacToe>> winning_lines = initializeWinningLines();
 		
-		
-		
-		//TODO: The rest of this fucking shit
-		
-		
-		
-		
-		
-		return 0;
-		
-		
-		
-		
-		/*		List<List<positionTicTacToe>> winning_line = initializeWinningLines();
-		int player1_counter = 0;
-		int player2_counter = 0;
-		for(positionTicTacToe move:board){
-			if(move.state == 1) {
-				//System.out.println("move is " + move.x + " " + move.y + " " + move.z);
-				for (List<positionTicTacToe> winning_combination : winning_line) {
-					if (contain(winning_combination, move)) {
-						player1_counter++;
-					}
+		for(List<positionTicTacToe> line:winning_lines) {
+			if(contain(line, current_position)) {
+				int linePoints = lineCount(board, line, player);
+				if(linePoints > 0) {
+					count += linePoints;
 				}
 			}
 		}
-
-		for(positionTicTacToe move:board){
-			if(move.state == 2) {
-				//System.out.println("move is " + move.x + " " + move.y + " " + move.z);
-				for (List<positionTicTacToe> winning_combination : winning_line) {
-					if (contain(winning_combination, move)) {
-						player2_counter++;
-					}
-				}
-			}
-		}
-
-		return player1_counter - player2_counter;*/
+		
+		return count;
 	}
 	
 	

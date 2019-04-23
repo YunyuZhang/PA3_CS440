@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5254621-dfc5-41cb-9ad7-c89834fe5b86" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-    </list>
+    <list default="true" id="c5254621-dfc5-41cb-9ad7-c89834fe5b86" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,10 +42,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-626">
+            <state relative-caret-position="1263">
               <caret line="85" column="62" selection-start-line="85" selection-start-column="57" selection-end-line="85" selection-end-column="62" />
             </state>
           </provider>
@@ -56,16 +54,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="394" lean-forward="true" selection-start-line="394" selection-end-line="394" />
+            <state relative-caret-position="4379">
+              <caret line="292" column="9" lean-forward="true" selection-start-line="292" selection-start-column="9" selection-end-line="292" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="180">
               <caret line="154" column="109" selection-start-line="154" selection-start-column="109" selection-end-line="154" selection-end-column="109" />
               <folding>
                 <element signature="e#808#809#0" expanded="true" />
@@ -125,7 +123,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="538" />
     <option name="y" value="23" />
     <option name="width" value="742" />
@@ -161,7 +159,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555984512347" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555984514801" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -224,18 +223,18 @@
       <updated>1555871073622</updated>
       <workItem from="1555871075455" duration="7579000" />
       <workItem from="1555885268464" duration="219000" />
-      <workItem from="1555885744279" duration="7003000" />
+      <workItem from="1555885744279" duration="7539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14801000" />
+    <option name="totallyTimeSpent" value="15337000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="538" y="23" width="742" height="739" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13043478" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21661238" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -244,7 +243,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30414012" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26863572" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -298,23 +297,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="394" lean-forward="true" selection-start-line="394" selection-end-line="394" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-626">
-          <caret line="85" column="62" selection-start-line="85" selection-start-column="57" selection-end-line="85" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="180">
           <caret line="154" column="109" selection-start-line="154" selection-start-column="109" selection-end-line="154" selection-end-column="109" />
           <folding>
             <element signature="e#808#809#0" expanded="true" />
@@ -331,6 +316,20 @@
             <element signature="e#1826#1832#0" expanded="true" />
             <element signature="e#2137#2143#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4379">
+          <caret line="292" column="9" lean-forward="true" selection-start-line="292" selection-start-column="9" selection-end-line="292" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1263">
+          <caret line="85" column="62" selection-start-line="85" selection-start-column="57" selection-end-line="85" selection-end-column="62" />
         </state>
       </provider>
     </entry>

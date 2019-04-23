@@ -381,16 +381,33 @@ public class runTicTacToe {
 //		rttt.run();
 
         //test
-		positionTicTacToe x1 = new positionTicTacToe(1,1,1,1);
-		positionTicTacToe x2 = new positionTicTacToe(2,1,1,1);
-		positionTicTacToe o1 = new positionTicTacToe(1,2,1,2);
-		List<positionTicTacToe> test_board = new ArrayList<>();
+		positionTicTacToe x1 = new positionTicTacToe(1,0,0,1);
+		positionTicTacToe x2 = new positionTicTacToe(2,0,0,1);
+        positionTicTacToe x3 = new positionTicTacToe(0,2,0,1);
+        positionTicTacToe x4 = new positionTicTacToe(0,0,2,1);
+
+		positionTicTacToe o1 = new positionTicTacToe(0,3,0,2);
+        positionTicTacToe o2 = new positionTicTacToe(1,3,0,2);
+        positionTicTacToe o3 = new positionTicTacToe(2,3,0,2);
+        positionTicTacToe o4 = new positionTicTacToe(3,3,0,2);
+
+        List<positionTicTacToe> test_board = new ArrayList<>();
 		test_board = createTicTacToeBoard();
 		makeMove(x1,1,test_board);
         makeMove(x2,1,test_board);
+        makeMove(x3,1,test_board);
+        makeMove(x4,1,test_board);
+
         makeMove(o1,2,test_board);
+        makeMove(o2,2,test_board);
+        makeMove(o3,2,test_board);
+        makeMove(o4,2,test_board);
 
         printBoardTicTacToe(test_board);
+
+        positionTicTacToe test_x = new positionTicTacToe(0,0,0,1);
+
+        System.out.println("heuristic:" + aiTicTacToe.calcHeuristic(test_board,test_x,1));
         //System.out.println(aiTicTacToe.calcHeuristic(test_board,1));
 
 

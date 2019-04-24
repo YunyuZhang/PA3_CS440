@@ -5,7 +5,7 @@ public class aiTicTacToe {
 
 	public static List<List<positionTicTacToe>> wl = initializeWinningLines();
 
-	public static int spaceLeft = 64;
+	//public static int spaceLeft = 32;
 
 	
 	
@@ -32,7 +32,7 @@ public class aiTicTacToe {
 						if(move > bestMove){
 							myNextMove = potential_move;
 							bestMove = move;
-							spaceLeft --;
+							//spaceLeft --;
 						}
 
 
@@ -50,7 +50,26 @@ public class aiTicTacToe {
 			
 		
 	}
-	
+
+	public positionTicTacToe randomMove(List<positionTicTacToe> board, int player)
+	{
+		//TODO: this is where you are going to implement your AI algorithm to win the game. The default is an AI randomly choose any available move.
+		positionTicTacToe myNextMove = new positionTicTacToe(0,0,0);
+
+		do
+		{
+			Random rand = new Random();
+			int x = rand.nextInt(4);
+			int y = rand.nextInt(4);
+			int z = rand.nextInt(4);
+			myNextMove = new positionTicTacToe(x,y,z);
+		}while(getStateOfPositionFromBoard(myNextMove,board)!=0);
+		return myNextMove;
+
+
+	}
+
+
 	
 	//TODO: Change possibleWinRows to make it return the winning rows that the position appears in
 	/**
@@ -259,13 +278,23 @@ public class aiTicTacToe {
 		}
 		return false;
 	}
+	public static boolean hasSpaceLeft(List<positionTicTacToe> board){
+		for(int i=0;i<board.size();i++)
+		{
+			if(board.get(i).state==0)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public static int minmax(List<positionTicTacToe> board,int depth, boolean maximingzingPlayer,int alpha,int beta){
 
 		Integer positive_Inf = Integer.MAX_VALUE;
 		Integer negative_Inf = Integer.MIN_VALUE;
 
-		if(depth == 1 || spaceLeft > 1){
+		if(depth == 1 || hasSpaceLeft(board)){
 			ArrayList<Integer> score_list = new ArrayList<Integer>();
 			for(int i = 0; i< board.size();i++){
 				if(board.get(i).state == 0){

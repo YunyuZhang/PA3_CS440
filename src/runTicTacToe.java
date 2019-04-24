@@ -316,7 +316,8 @@ public class runTicTacToe {
 		}
 		return false;
 	}
-	public void run()
+	//change it to void later
+	public int  run()
 	{
 
 		Random rand = new Random();
@@ -331,8 +332,8 @@ public class runTicTacToe {
 					turn = 2;
 			}
 			else if(turn==2)
-			{
-				positionTicTacToe player2NextMove = ai2.myAIAlgorithm(board,2); //2 stands for player 2
+			{//debug
+				positionTicTacToe player2NextMove = ai2.randomMove(board,2); //2 stands for player 2
 				if(makeMove(player2NextMove,2,board))
 					turn = 1;
 			}
@@ -349,23 +350,28 @@ public class runTicTacToe {
 			//game ends, player 1 wins 
 			System.out.println("Player1 Wins");
 			printBoardTicTacToe(board);
+			return 1;
+
 		}
 		else if(result==2)
 		{
 			//game ends, player 2 wins
 			System.out.println("Player2 Wins");
 			printBoardTicTacToe(board);
+			return 2;
 		}
 		else if(result==-1)
 		{
 			//game ends, it's a draw 
 			System.out.println("This is a draw.");
 			printBoardTicTacToe(board);
+			return -1;
 		}
 		else
 		{
 			//exception occurs, stop
 			System.out.println("Error!");
+			return -10;
 		}
 		
 	}
@@ -377,8 +383,21 @@ public class runTicTacToe {
 	public static void main(String[] args) {		
 
 		//run game loop
-		runTicTacToe rttt = new runTicTacToe();
-		rttt.run();
+        int player1Win = 0;
+        int player2Win =0;
+        for(int i =0;i< 100;i ++){
+            runTicTacToe rttt = new runTicTacToe();
+            int result = rttt.run();
+            if (result == 1)
+                player1Win ++;
+            if(result ==2)
+                player2Win++;
+
+        }
+        System.out.println("player 1 win " + player1Win + " player 2 win "+ player2Win);
+
+
+
 
 //        //test
 //		positionTicTacToe x1 = new positionTicTacToe(1,0,0,1);

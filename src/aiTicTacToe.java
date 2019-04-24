@@ -70,9 +70,13 @@ public class aiTicTacToe {
 	}
 	
 	
-	public boolean hasWon() {
+	public boolean hasWon(List<positionTicTacToe> board, int player) {
 		
-		// TODO: Still working on this rn.
+		for(List<positionTicTacToe> line:wl) {
+			if(hasWonInLine(board, line, player)) {
+				return true;
+			}
+		}
 		
 		return false;
 	}
@@ -155,12 +159,20 @@ public class aiTicTacToe {
 	 * @return
 	 */
 	
-	
+	// TODO: Should calcHeuristic return a value based on the player or the AI? (if player is enemy AKA not AI)
 	public int calcHeuristic(List<positionTicTacToe> board, positionTicTacToe current_position, int player){
 		int enemy;
 		
 		if(player == 1) enemy = 2;
 		else enemy = 1;
+		
+		if(hasWon(board, player)) {
+			return 100;
+		}
+		
+		if(hasWon(board, enemy)) {
+			return -100;
+		}
 
 		List<List<positionTicTacToe>> ourWinLines = possibleWinLines(board, player);
 		if(!ourWinLines.isEmpty()) {
@@ -169,7 +181,7 @@ public class aiTicTacToe {
 				return 100;
 			}
 			else {
-				return -100;
+				return -100; // TODO: might want to get rid of this 
 			}
 		}
 		
@@ -180,7 +192,7 @@ public class aiTicTacToe {
 				return 50;
 			}
 			else {
-				return -50;
+				return -50; // TODO: might want to get rid of this (Also might want to switch the values around idk)
 			}
 		}
 		

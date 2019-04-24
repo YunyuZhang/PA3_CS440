@@ -32,6 +32,7 @@ public class aiTicTacToe {
 						if(move > bestMove){
 							myNextMove = potential_move;
 							bestMove = move;
+							spaceLeft --;
 						}
 
 
@@ -275,7 +276,6 @@ public class aiTicTacToe {
 				}
 
 			}
-			spaceLeft--;
 			return Collections.max(score_list);
 
 		}
@@ -295,7 +295,6 @@ public class aiTicTacToe {
 
 				}
 			}
-			spaceLeft--;
 
 			return value;
 		}
@@ -313,8 +312,6 @@ public class aiTicTacToe {
 
 				}
 			}
-
-			spaceLeft--;
 
 			return value;
 

@@ -36,6 +36,7 @@ public class aiTicTacToe {
 				int bestMove = Integer.MIN_VALUE;
 				for(int i = 0;i< board.size();i++){
 					if(board.get(i).state == 0){
+
 						List<positionTicTacToe> copyBoard = deepCopyATicTacToeBoard(board);
 						copyBoard.get(i).state = player;
 						int move = minmax(copyBoard,2,true,Integer.MIN_VALUE,Integer.MAX_VALUE);
@@ -56,6 +57,7 @@ public class aiTicTacToe {
 //				int z = rand.nextInt(4);
 //				myNextMove = new positionTicTacToe(x,y,z);
 			}while(getStateOfPositionFromBoard(myNextMove,board)!=0);
+		System.out.println(calcHeuristic(board,myNextMove,player));
 		return myNextMove;
 			
 		
@@ -168,6 +170,17 @@ public class aiTicTacToe {
 		return count;
 	}
 	
+	public static int totalUnblockedLines(List<positionTicTacToe> board, int player) {
+		int count = 0;
+		
+		for(List<positionTicTacToe> line:wl) {
+			if(lineCount(board, line, player) >= 0) {
+				count++;
+			}
+		}
+		return count;
+	}
+	
 	
 	/**
 	 * LineCount counts the number of current positions that is currently occupied by the player. If another player also occupies the line, return 0.
@@ -257,7 +270,7 @@ public class aiTicTacToe {
 		int count = unblockedLines(board, current_position, player);
 
 		//System.out.println("before: "+ count);
-		List<List<positionTicTacToe>> winning_lines = initializeWinningLines();
+		//List<List<positionTicTacToe>> winning_lines = initializeWinningLines();
 		
 		for(List<positionTicTacToe> line:wl) {
 
@@ -271,6 +284,35 @@ public class aiTicTacToe {
 		}
 		
 		return count;
+	}
+	
+	public static int ultimateHeuristic(List<positionTicTacToe> board, int player) {
+		int enemy;
+		
+		if(player == 1) enemy = 2;
+		else enemy = 1;
+		
+		if(hasWon(board, player)) {
+			return 100;
+		}
+		
+		if(hasWon(board, enemy)) {
+			return -100;
+		}
+		
+		int count = totalUnblockedLines(board, player);
+		
+		// WinPoints and lossPoints are lines where we about to win or lose
+		int winPoints = possibleWinLines(board, player).size() * 5;
+		int lossPoints = possibleWinLines(board, enemy).size() * -2;
+		
+		int result = count + winPoints + lossPoints;
+		
+
+		//System.out.println("before: "+ count);
+		//List<List<positionTicTacToe>> winning_lines = initializeWinningLines();
+		
+		return result;
 	}
 	
 	
@@ -393,6 +435,8 @@ public class aiTicTacToe {
 			}
 			System.out.println("value in max " + value);
 
+
+			System.out.print(value);
 			return value;
 		}
 		else{
@@ -412,6 +456,7 @@ public class aiTicTacToe {
 			}
 			System.out.println("value in min " + value);
 
+			System.out.print(value);
 			return value;
 
 		}

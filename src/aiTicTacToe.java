@@ -3,11 +3,12 @@ public class aiTicTacToe {
 
 	public int player; //1 for player 1 and 2 for player 2
 
-	public List<List<positionTicTacToe>> wl = initializeWinningLines();
+	public static List<List<positionTicTacToe>> wl = initializeWinningLines();
+	public static int spaceLeft = 64;
 	
 	
 	
-	private int getStateOfPositionFromBoard(positionTicTacToe position, List<positionTicTacToe> board)
+	private static int getStateOfPositionFromBoard(positionTicTacToe position, List<positionTicTacToe> board)
 	{
 		//a helper function to get state of a certain position in the Tic-Tac-Toe board by given position TicTacToe
 		int index = position.x*16+position.y*4+position.z;
@@ -20,11 +21,28 @@ public class aiTicTacToe {
 		
 		do
 			{
-				Random rand = new Random();
-				int x = rand.nextInt(4);
-				int y = rand.nextInt(4);
-				int z = rand.nextInt(4);
-				myNextMove = new positionTicTacToe(x,y,z);
+				int bestMove = Integer.MIN_VALUE;
+				for(int i = 0;i< board.size();i++){
+					if(board.get(i).state == 0){
+						positionTicTacToe potential_move = board.get(i);
+						potential_move.state = player;
+						int move = minmax(board,2,true,Integer.MIN_VALUE,Integer.MAX_VALUE);
+						potential_move.state = 0;
+						if(move > bestMove){
+							myNextMove = potential_move;
+							bestMove = move;
+						}
+
+
+
+
+					}
+				}
+//				Random rand = new Random();
+//				int x = rand.nextInt(4);
+//				int y = rand.nextInt(4);
+//				int z = rand.nextInt(4);
+//				myNextMove = new positionTicTacToe(x,y,z);
 			}while(getStateOfPositionFromBoard(myNextMove,board)!=0);
 		return myNextMove;
 			
@@ -52,7 +70,7 @@ public class aiTicTacToe {
 		return possWinLines;
 	}
 	
-	public boolean almostWinInLine(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player){
+	public static boolean almostWinInLine(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player){
 
 		int count = 0;
 		int enemy;
@@ -80,7 +98,7 @@ public class aiTicTacToe {
 		return false;
 	}
 	
-	public boolean hasWonInLine(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player) {
+	public static boolean hasWonInLine(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player) {
 		int count = 0;
 		
 		for(positionTicTacToe position:position_list) {
@@ -167,7 +185,7 @@ public class aiTicTacToe {
 
 		List<List<positionTicTacToe>> ourWinLines = possibleWinLines(board, player);
 		if(!ourWinLines.isEmpty()) {
-			System.out.println("works");
+			//System.out.println("works");
 			// Will only ever consider the first result of this list, because the game will end regardless of what line is looked at.
 			if(contain(ourWinLines.get(0), current_position)) {  // TODO: Must ensure that current position is always an empty position. Else this bugs out.
 				return 100;
@@ -180,7 +198,7 @@ public class aiTicTacToe {
 		List<List<positionTicTacToe>> enemyWinLines = possibleWinLines(board, enemy);
 		if(!enemyWinLines.isEmpty()) {
       
-			System.out.println("works 2");
+			//System.out.println("works 2");
 			// Will only ever consider the first result of this list, because the game will end regardless of what line is looked at.
 			if(contain(enemyWinLines.get(0), current_position)) {  // TODO: Must ensure that current position is always an empty position. Else this bugs out.
 
@@ -193,7 +211,7 @@ public class aiTicTacToe {
 		
 		int count = unblockedLines(board, current_position, player);
 
-		System.out.println("before: "+ count);
+		//System.out.println("before: "+ count);
 		List<List<positionTicTacToe>> winning_lines = initializeWinningLines();
 		
 		for(List<positionTicTacToe> line:wl) {
@@ -202,7 +220,7 @@ public class aiTicTacToe {
 				int linePoints = lineCount(board, line, player);
 				if(linePoints > 0) {
 					count += linePoints;
-					System.out.println("after: "+ count);
+					//System.out.println("after: "+ count);
 				}
 			}
 		}
@@ -225,7 +243,71 @@ public class aiTicTacToe {
 		}
 		return false;
 	}
-	
+
+	public static int minmax(List<positionTicTacToe> board,int depth, boolean maximingzingPlayer,int alpha,int beta){
+
+		Integer positive_Inf = Integer.MAX_VALUE;
+		Integer negative_Inf = Integer.MIN_VALUE;
+
+		if(depth == 1 || spaceLeft > 1){
+			ArrayList<Integer> score_list = new ArrayList<Integer>();
+			for(int i = 0; i< board.size();i++){
+				if(board.get(i).state == 0){
+					positionTicTacToe potential_move = board.get(i);
+					int value = calcHeuristic(board,potential_move,1);
+					score_list.add(value);
+
+				}
+
+			}
+			spaceLeft--;
+			return Collections.max(score_list);
+
+		}
+
+		if (maximingzingPlayer){
+			int value = negative_Inf;
+
+			for(int i = 0;i< board.size();i++){
+				if(board.get(i).state == 0){
+					positionTicTacToe potential_move = board.get(i);
+					value = calcHeuristic(board,potential_move,1);
+					value = Math.max(value,minmax(board,depth-1,false,alpha,beta));
+					alpha = Math.max(alpha,value);
+					if (beta <= alpha){
+						break;
+					}
+
+				}
+			}
+			spaceLeft--;
+
+			return value;
+		}
+		else{
+			int value = positive_Inf;
+			for(int i = 0;i< board.size();i++){
+				if(board.get(i).state == 0){
+					positionTicTacToe potential_move = board.get(i);
+					value = calcHeuristic(board,potential_move,2);
+					value = Math.max(value,minmax(board,depth-1,true,alpha,beta));
+					beta = Math.min(beta,value);
+					if (beta <= alpha){
+						break;
+					}
+
+				}
+			}
+
+			spaceLeft--;
+
+			return value;
+
+		}
+	}
+
+
+
 	
 
 	
@@ -386,10 +468,13 @@ public class aiTicTacToe {
 	public static void main(String[] args) {
 
 		//initializeWinningLines();
-		positionTicTacToe test_position1 = new positionTicTacToe(0,3,2,-1);
-		positionTicTacToe test_position2 = new positionTicTacToe(1,1,1,-1);
+//		positionTicTacToe test_position1 = new positionTicTacToe(0,3,2,-1);
+//		positionTicTacToe test_position2 = new positionTicTacToe(1,1,1,-1);
 
 		//System.out.println(possibleWinLines(test_position1));
+
+
+
 
 	}
 }

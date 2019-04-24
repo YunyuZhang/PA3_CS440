@@ -7,6 +7,8 @@ public class runTicTacToe {
 	private List<positionTicTacToe> board = new ArrayList<>();
 	private aiTicTacToe ai1;
 	private aiTicTacToe ai2;
+
+	private gua guaAi;
 	
 	public int result;
 	public runTicTacToe()
@@ -305,6 +307,8 @@ public class runTicTacToe {
 				if(targetBoard.get(i).state==0)
 				{
 					targetBoard.get(i).state = player;
+					printBoardTicTacToe(targetBoard);
+                    System.out.println("================");
 					return true;
 				}
 				else
@@ -333,7 +337,7 @@ public class runTicTacToe {
 			}
 			else if(turn==2)
 			{//debug
-				positionTicTacToe player2NextMove = ai2.randomMove(board,2); //2 stands for player 2
+				positionTicTacToe player2NextMove = gua.myAIAlgorithm1(board,2); //2 stands for player 2
 				if(makeMove(player2NextMove,2,board))
 					turn = 1;
 			}
@@ -383,18 +387,21 @@ public class runTicTacToe {
 	public static void main(String[] args) {		
 
 		//run game loop
-        int player1Win = 0;
-        int player2Win =0;
-        for(int i =0;i< 100;i ++){
-            runTicTacToe rttt = new runTicTacToe();
-            int result = rttt.run();
-            if (result == 1)
-                player1Win ++;
-            if(result ==2)
-                player2Win++;
+//        int player1Win = 0;
+//        int player2Win =0;
+//        for(int i =0;i< 100;i ++){
+//            runTicTacToe rttt = new runTicTacToe();
+//            int result = rttt.run();
+//            if (result == 1)
+//                player1Win ++;
+//            if(result ==2)
+//                player2Win++;
+//
+//        }
+//        System.out.println("player 1 win " + player1Win + " player 2 win "+ player2Win);
 
-        }
-        System.out.println("player 1 win " + player1Win + " player 2 win "+ player2Win);
+        runTicTacToe rttt = new runTicTacToe();
+        int result = rttt.run();
 
 
 

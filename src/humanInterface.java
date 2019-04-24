@@ -298,7 +298,7 @@ public class humanInterface {
         //player 1 = 1, player 2 = 2
 
         //brute force (obviously not a wise way though)
-        System.out.println("player " + player + " x " + position.x+" y "+ position.y+ " z " + position.z);
+        //System.out.println("player " + player + " x " + position.x+" y "+ position.y+ " z " + position.z);
         for(int i=0;i<targetBoard.size();i++)
         {
             if(targetBoard.get(i).x==position.x && targetBoard.get(i).y==position.y && targetBoard.get(i).z==position.z) //if this is the position
@@ -306,7 +306,9 @@ public class humanInterface {
                 if(targetBoard.get(i).state==0)
                 {
                     targetBoard.get(i).state = player;
+                    System.out.println(" ======Player"+ player + " ========= ");
                     printBoardTicTacToe(targetBoard);
+
                     return true;
                 }
                 else
@@ -328,15 +330,14 @@ public class humanInterface {
 
         while((result = isEnded())==0) //game loop
         {
-            Scanner sc = new Scanner(System.in);
-            String input = sc.nextLine();  // read the next input
-            int x_pos = Integer.parseInt(input.substring(0,1));
-            int y_pos =Integer.parseInt(input.substring(2,3));
-            int z_pos = Integer.parseInt(input.substring(4,5));
-            positionTicTacToe userInput = new positionTicTacToe(x_pos,y_pos,z_pos);
 
             if(turn==1)
-            {
+            {   Scanner sc = new Scanner(System.in);
+                String input = sc.nextLine();  // read the next input
+                int x_pos = Integer.parseInt(input.substring(0,1));
+                int y_pos =Integer.parseInt(input.substring(2,3));
+                int z_pos = Integer.parseInt(input.substring(4,5));
+                positionTicTacToe userInput = new positionTicTacToe(x_pos,y_pos,z_pos);
                 //positionTicTacToe player1NextMove = ai1.myAIAlgorithm(board,1); //1 stands for player 1
                 positionTicTacToe player1NextMove = userInput;
                 if(makeMove(player1NextMove,1,board))

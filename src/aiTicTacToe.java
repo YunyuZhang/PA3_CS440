@@ -39,7 +39,7 @@ public class aiTicTacToe {
 
 						List<positionTicTacToe> copyBoard = deepCopyATicTacToeBoard(board);
 						copyBoard.get(i).state = player;
-						int move = minmax(copyBoard,2,true,Integer.MIN_VALUE,Integer.MAX_VALUE);
+						int move = new_minmax(copyBoard,2,player,true,Integer.MIN_VALUE,Integer.MAX_VALUE);
 						if(move > bestMove){
 							myNextMove = copyBoard.get(i);;
 							bestMove = move;
@@ -57,7 +57,7 @@ public class aiTicTacToe {
 //				int z = rand.nextInt(4);
 //				myNextMove = new positionTicTacToe(x,y,z);
 			}while(getStateOfPositionFromBoard(myNextMove,board)!=0);
-		System.out.println(calcHeuristic(board,myNextMove,player));
+		//System.out.println(calcHeuristic(board,myNextMove,player));
 		return myNextMove;
 			
 		
@@ -345,7 +345,7 @@ public class aiTicTacToe {
 
 		Integer positive_Inf = Integer.MAX_VALUE;
 		Integer negative_Inf = Integer.MIN_VALUE;
-		System.out.println("true or false " + maximizingPlayer);
+		//System.out.println("true or false " + maximizingPlayer);
 
 		if(depth == 1 || !hasSpaceLeft(board)){
 			ArrayList<Integer> score_list = new ArrayList<Integer>();
@@ -364,7 +364,7 @@ public class aiTicTacToe {
 		}
 
 		if (maximizingPlayer){
-			System.out.println("maxxminzing ");
+			//System.out.println("maxxminzing ");
 			int value = negative_Inf;
 
 			for(int i = 0;i< board.size();i++){
@@ -379,12 +379,11 @@ public class aiTicTacToe {
 
 				}
 			}
-			System.out.println("value in max " + value);
+			//System.out.println("value in max " + value);
 
 			return value;
 		}
 		else{
-			System.out.println("minnnning  ");
 			int value = positive_Inf;
 			for(int i = 0;i< board.size();i++){
 				if(board.get(i).state == 0){
@@ -398,63 +397,58 @@ public class aiTicTacToe {
 
 				}
 			}
-			System.out.println("value in min " + value);
 
 			return value;
 
 		}
 	}
 
-	public static int new_minmax(List<positionTicTacToe> board,int depth, boolean maximizingPlayer,int alpha,int beta){
+	public static int new_minmax(List<positionTicTacToe> board,int depth,int player, boolean maximizingPlayer,int alpha,int beta){
 
 		Integer positive_Inf = Integer.MAX_VALUE;
 		Integer negative_Inf = Integer.MIN_VALUE;
 
 		if(depth == 0 || !hasSpaceLeft(board)){
-			ArrayList<Integer> score_list = new ArrayList<Integer>();
 
-			//System.out.println("herustic " + score_list + Collections.max(score_list));
-			return 11;
+			return ultimateHeuristic(board,player);
 
 		}
 		if (maximizingPlayer){
-			System.out.println("maxxminzing ");
 			int value = negative_Inf;
 
 			for(int i = 0;i< board.size();i++){
 				if(board.get(i).state == 0){
-					positionTicTacToe potential_move = board.get(i);
-					value = calcHeuristic(board,potential_move,1);
-					value = Math.max(value,minmax(board,depth-1,false,alpha,beta));
+					board.get(i).state = player;
+					value = Math.max(value,new_minmax(board,depth-1, player,false,alpha,beta));
 					alpha = Math.max(alpha,value);
+					board.get(i).state = 0;
+
 					if (beta <= alpha){
 						break;
 					}
 
 				}
 			}
-			System.out.println("value in max " + value);
 
 
-			System.out.print(value);
+			//System.out.print(value);
 			return value;
 		}
 		else{
-			System.out.println("minnnning  ");
+			//System.out.println("minnnning  ");
 			int value = positive_Inf;
 			for(int i = 0;i< board.size();i++){
 				if(board.get(i).state == 0){
-					positionTicTacToe potential_move = board.get(i);
-					value = calcHeuristic(board,potential_move,2);
-					value = Math.max(value,minmax(board,depth-1,true,alpha,beta));
+					board.get(i).state = player;
+					value = Math.max(value,new_minmax(board,depth-1,player,true,alpha,beta));
 					beta = Math.min(beta,value);
+					board.get(i).state = 0;
 					if (beta <= alpha){
 						break;
 					}
 
 				}
 			}
-			System.out.println("value in min " + value);
 
 			System.out.print(value);
 			return value;

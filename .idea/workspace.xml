@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5254621-dfc5-41cb-9ad7-c89834fe5b86" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aiTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aiTicTacToe.java" afterDir="false" />
-    </list>
+    <list default="true" id="c5254621-dfc5-41cb-9ad7-c89834fe5b86" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,85 +43,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file leaf-file-name="aiTicTacToe.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="423" column="69" selection-start-line="423" selection-start-column="69" selection-end-line="423" selection-end-column="69" />
-              <folding>
-                <element signature="e#709#728#0" expanded="true" />
-                <element signature="e#3458#3483#0" expanded="true" />
-                <element signature="e#10433#10442#0" expanded="true" />
-                <element signature="e#10113#10138#0" expanded="true" />
-                <element signature="e#10317#10336#0" expanded="true" />
-                <element signature="e#10753#10772#0" expanded="true" />
-                <element signature="e#11189#11208#0" expanded="true" />
-                <element signature="e#11626#11645#0" expanded="true" />
-                <element signature="e#12025#12044#0" expanded="true" />
-                <element signature="e#12424#12443#0" expanded="true" />
-                <element signature="e#12861#12880#0" expanded="true" />
-                <element signature="e#13260#13279#0" expanded="true" />
-                <element signature="e#13659#13678#0" expanded="true" />
-                <element signature="e#14052#14071#0" expanded="true" />
-                <element signature="e#15772#15773#0" expanded="true" />
-                <element signature="e#15797#15798#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="423" column="43" selection-start-line="423" selection-start-column="43" selection-end-line="423" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="runTicTacToe.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
+            <state relative-caret-position="629">
               <caret line="37" selection-start-line="37" selection-end-line="46" selection-end-column="5" />
-              <folding>
-                <element signature="e#702#721#0" expanded="true" />
-                <element signature="e#1098#1117#0" expanded="true" />
-                <element signature="e#1548#1573#0" expanded="true" />
-                <element signature="e#1752#1771#0" expanded="true" />
-                <element signature="e#2188#2207#0" expanded="true" />
-                <element signature="e#2624#2643#0" expanded="true" />
-                <element signature="e#3061#3080#0" expanded="true" />
-                <element signature="e#3460#3479#0" expanded="true" />
-                <element signature="e#3859#3878#0" expanded="true" />
-                <element signature="e#4296#4315#0" expanded="true" />
-                <element signature="e#4695#4714#0" expanded="true" />
-                <element signature="e#5094#5113#0" expanded="true" />
-                <element signature="e#5487#5506#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="gua.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gua.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
               <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-              <folding>
-                <element signature="e#13793#13818#0" expanded="true" />
-                <element signature="e#14043#14062#0" expanded="true" />
-                <element signature="e#14590#14609#0" expanded="true" />
-                <element signature="e#15137#15156#0" expanded="true" />
-                <element signature="e#15672#15691#0" expanded="true" />
-                <element signature="e#16141#16160#0" expanded="true" />
-                <element signature="e#16610#16629#0" expanded="true" />
-                <element signature="e#17121#17140#0" expanded="true" />
-                <element signature="e#17590#17609#0" expanded="true" />
-                <element signature="e#18059#18078#0" expanded="true" />
-                <element signature="e#18507#18526#0" expanded="true" />
-                <element signature="e#19939#19940#0" expanded="true" />
-                <element signature="e#19973#19974#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="humanInterface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/humanInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
+            <state relative-caret-position="5236">
               <caret line="308" column="49" selection-start-line="308" selection-start-column="49" selection-end-line="308" selection-end-column="49" />
             </state>
           </provider>
@@ -193,10 +143,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="281" />
-    <option name="y" value="23" />
-    <option name="width" value="1003" />
-    <option name="height" value="739" />
+    <option name="x" value="280" />
+    <option name="y" value="22" />
+    <option name="width" value="1004" />
+    <option name="height" value="740" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -247,32 +197,20 @@
     <configuration name="Node" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Node" />
       <module name="PA3_CS440" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="aiTicTacToe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="aiTicTacToe" />
       <module name="PA3_CS440" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="humanInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="humanInterface" />
       <module name="PA3_CS440" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="runTicTacToe" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="runTicTacToe" />
       <module name="PA3_CS440" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <list>
       <item itemvalue="Application.runTicTacToe" />
@@ -309,67 +247,67 @@
     <option name="totallyTimeSpent" value="37974000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1536" height="864" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.10830619" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38537273" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.23909986" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32911393" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38537273" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.23909986" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Designer" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.10830619" />
+      <window_info id="Learn" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32911393" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21661238" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41631505" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41631505" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32961783" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info id="Favorites" order="6" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,6 +335,34 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7191">
+          <caret line="423" column="43" lean-forward="true" selection-start-line="423" selection-start-column="43" selection-end-line="423" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" selection-start-line="37" selection-end-line="46" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gua.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/humanInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5236">
+          <caret line="308" column="49" selection-start-line="308" selection-start-column="49" selection-end-line="308" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/positionTicTacToe.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -416,79 +382,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gua.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="e#13793#13818#0" expanded="true" />
-            <element signature="e#14043#14062#0" expanded="true" />
-            <element signature="e#14590#14609#0" expanded="true" />
-            <element signature="e#15137#15156#0" expanded="true" />
-            <element signature="e#15672#15691#0" expanded="true" />
-            <element signature="e#16141#16160#0" expanded="true" />
-            <element signature="e#16610#16629#0" expanded="true" />
-            <element signature="e#17121#17140#0" expanded="true" />
-            <element signature="e#17590#17609#0" expanded="true" />
-            <element signature="e#18059#18078#0" expanded="true" />
-            <element signature="e#18507#18526#0" expanded="true" />
-            <element signature="e#19939#19940#0" expanded="true" />
-            <element signature="e#19973#19974#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
+        <state relative-caret-position="629">
           <caret line="37" selection-start-line="37" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <element signature="e#702#721#0" expanded="true" />
-            <element signature="e#1098#1117#0" expanded="true" />
-            <element signature="e#1548#1573#0" expanded="true" />
-            <element signature="e#1752#1771#0" expanded="true" />
-            <element signature="e#2188#2207#0" expanded="true" />
-            <element signature="e#2624#2643#0" expanded="true" />
-            <element signature="e#3061#3080#0" expanded="true" />
-            <element signature="e#3460#3479#0" expanded="true" />
-            <element signature="e#3859#3878#0" expanded="true" />
-            <element signature="e#4296#4315#0" expanded="true" />
-            <element signature="e#4695#4714#0" expanded="true" />
-            <element signature="e#5094#5113#0" expanded="true" />
-            <element signature="e#5487#5506#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/humanInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
+        <state relative-caret-position="5236">
           <caret line="308" column="49" selection-start-line="308" selection-start-column="49" selection-end-line="308" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="423" column="69" selection-start-line="423" selection-start-column="69" selection-end-line="423" selection-end-column="69" />
-          <folding>
-            <element signature="e#709#728#0" expanded="true" />
-            <element signature="e#3458#3483#0" expanded="true" />
-            <element signature="e#10433#10442#0" expanded="true" />
-            <element signature="e#10113#10138#0" expanded="true" />
-            <element signature="e#10317#10336#0" expanded="true" />
-            <element signature="e#10753#10772#0" expanded="true" />
-            <element signature="e#11189#11208#0" expanded="true" />
-            <element signature="e#11626#11645#0" expanded="true" />
-            <element signature="e#12025#12044#0" expanded="true" />
-            <element signature="e#12424#12443#0" expanded="true" />
-            <element signature="e#12861#12880#0" expanded="true" />
-            <element signature="e#13260#13279#0" expanded="true" />
-            <element signature="e#13659#13678#0" expanded="true" />
-            <element signature="e#14052#14071#0" expanded="true" />
-            <element signature="e#15772#15773#0" expanded="true" />
-            <element signature="e#15797#15798#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="423" column="43" selection-start-line="423" selection-start-column="43" selection-end-line="423" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gua.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
         </state>
       </provider>
     </entry>

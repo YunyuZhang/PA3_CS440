@@ -174,8 +174,9 @@ public class aiTicTacToe {
 		int count = 0;
 		
 		for(List<positionTicTacToe> line:wl) {
-			if(lineCount(board, line, player) >= 0) {
-				count++;
+			int lineCheck = lineCount(board, line, player);
+			if( lineCheck >= 0) {
+				count += lineCheck;
 			}
 		}
 		return count;
@@ -404,12 +405,17 @@ public class aiTicTacToe {
 	}
 
 	public static int new_minmax(List<positionTicTacToe> board,int depth,int player, boolean maximizingPlayer,int alpha,int beta){
-
+		int enemy;
+		
+		if(player == 1) enemy = 2;
+		else enemy = 1;
+		
 		Integer positive_Inf = Integer.MAX_VALUE;
 		Integer negative_Inf = Integer.MIN_VALUE;
 
-		if(depth == 0 || !hasSpaceLeft(board)){
-
+		if(depth == 0 || !hasSpaceLeft(board)){ // TODO: This is fishy
+			
+			System.out.println(ultimateHeuristic(board,player));
 			return ultimateHeuristic(board,player);
 
 		}
@@ -450,7 +456,7 @@ public class aiTicTacToe {
 				}
 			}
 
-			System.out.print(value);
+			//System.out.print(value);
 			return value;
 
 		}

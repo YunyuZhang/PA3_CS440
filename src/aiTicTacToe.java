@@ -33,17 +33,18 @@ public class aiTicTacToe {
 		
 		do
 			{
-				int bestMove = Integer.MIN_VALUE;
+				int maxScore = Integer.MIN_VALUE;
 				for(int i = 0;i< board.size();i++){
 					if(board.get(i).state == 0){
 
 						List<positionTicTacToe> copyBoard = deepCopyATicTacToeBoard(board);
 						copyBoard.get(i).state = player;
-						int move = new_minmax(copyBoard,2,player,true,Integer.MIN_VALUE,Integer.MAX_VALUE);
-						if(move > bestMove){
-							myNextMove = copyBoard.get(i);;
-							bestMove = move;
-							//spaceLeft --;
+						int move = new_minmax(copyBoard,2,player,Integer.MIN_VALUE,Integer.MAX_VALUE);
+						if(move > maxScore){
+							myNextMove.x = board.get(i).x;
+							myNextMove.y = board.get(i).y;
+							myNextMove.z = board.get(i).z;
+							maxScore = move;
 						}
 
 
@@ -286,11 +287,14 @@ public class aiTicTacToe {
 		return count;
 	}
 	
-	public static int ultimateHeuristic(List<positionTicTacToe> board, int player) {
+	public static int ultimateHeuristic(List<positionTicTacToe> board) {
 		int enemy;
 		
-		if(player == 1) enemy = 2;
-		else enemy = 1;
+//		if(player == 1) enemy = 2;
+//		else enemy = 1;
+
+		int player = 1;
+		enemy = 2;
 		
 		if(hasWon(board, player)) {
 			return 100;
@@ -305,6 +309,7 @@ public class aiTicTacToe {
 		// WinPoints and lossPoints are lines where we about to win or lose
 		int winPoints = possibleWinLines(board, player).size() * 5;
 		int lossPoints = possibleWinLines(board, enemy).size() * -2;
+
 		
 		int result = count + winPoints + lossPoints;
 		
@@ -403,24 +408,24 @@ public class aiTicTacToe {
 		}
 	}
 
-	public static int new_minmax(List<positionTicTacToe> board,int depth,int player, boolean maximizingPlayer,int alpha,int beta){
+	public static int new_minmax(List<positionTicTacToe> board,int depth,int player,int alpha,int beta){
+		//https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-4-alpha-beta-pruning/
 
 		Integer positive_Inf = Integer.MAX_VALUE;
 		Integer negative_Inf = Integer.MIN_VALUE;
+		if(depth == 0 || !hasSpaceLeft(board) || hasWon(board,player) || hasWon(board,3-player)){
 
-		if(depth == 0 || !hasSpaceLeft(board)){
-
-			return ultimateHeuristic(board,player);
-
+			return ultimateHeuristic(board);
 		}
-		if (maximizingPlayer){
-			int value = negative_Inf;
+		if (player ==1){
+			int bestValue = negative_Inf;
 
 			for(int i = 0;i< board.size();i++){
 				if(board.get(i).state == 0){
 					board.get(i).state = player;
-					value = Math.max(value,new_minmax(board,depth-1, player,false,alpha,beta));
-					alpha = Math.max(alpha,value);
+					int value = new_minmax(board,depth-1, 2,alpha,beta);
+					bestValue = Math.max(bestValue,value);
+					alpha = Math.max(alpha,bestValue);
 					board.get(i).state = 0;
 
 					if (beta <= alpha){
@@ -430,18 +435,18 @@ public class aiTicTacToe {
 				}
 			}
 
-
 			//System.out.print(value);
-			return value;
+			return bestValue;
 		}
 		else{
 			//System.out.println("minnnning  ");
-			int value = positive_Inf;
+			int bestValue = positive_Inf;
 			for(int i = 0;i< board.size();i++){
 				if(board.get(i).state == 0){
 					board.get(i).state = player;
-					value = Math.max(value,new_minmax(board,depth-1,player,true,alpha,beta));
-					beta = Math.min(beta,value);
+					int value = new_minmax(board,depth-1,1,alpha,beta);
+					bestValue = Math.min(bestValue,value);
+					beta = Math.min(beta,bestValue);
 					board.get(i).state = 0;
 					if (beta <= alpha){
 						break;
@@ -450,8 +455,8 @@ public class aiTicTacToe {
 				}
 			}
 
-			System.out.print(value);
-			return value;
+			//System.out.print(value);
+			return bestValue;
 
 		}
 	}

@@ -401,7 +401,7 @@ public class runTicTacToe {
 //        System.out.println("player 1 win " + player1Win + " player 2 win "+ player2Win);
 
         runTicTacToe rttt = new runTicTacToe();
-        int result = rttt.run();
+        rttt.run();
 
 
 

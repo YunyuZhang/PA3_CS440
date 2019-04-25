@@ -175,8 +175,9 @@ public class aiTicTacToe {
 		int count = 0;
 		
 		for(List<positionTicTacToe> line:wl) {
-			if(lineCount(board, line, player) >= 0) {
-				count++;
+			int lineCheck = lineCount(board, line, player);
+			if( lineCheck >= 0) {
+				count += lineCheck;
 			}
 		}
 		return count;
@@ -408,6 +409,7 @@ public class aiTicTacToe {
 		}
 	}
 
+
 	public static int new_minmax(List<positionTicTacToe> board,int depth,int player,int alpha,int beta){
 		//https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-4-alpha-beta-pruning/
 
@@ -415,7 +417,11 @@ public class aiTicTacToe {
 		Integer negative_Inf = Integer.MIN_VALUE;
 		if(depth == 0 || !hasSpaceLeft(board) || hasWon(board,player) || hasWon(board,3-player)){
 
+
+			
+			System.out.println(ultimateHeuristic(board));
 			return ultimateHeuristic(board);
+
 		}
 		if (player ==1){
 			int bestValue = negative_Inf;
@@ -456,7 +462,10 @@ public class aiTicTacToe {
 			}
 
 			//System.out.print(value);
+
 			return bestValue;
+
+
 
 		}
 	}

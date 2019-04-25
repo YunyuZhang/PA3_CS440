@@ -249,14 +249,14 @@ public class humanInterface {
     public static void printBoardTicTacToe(List<positionTicTacToe> targetBoard)
     {
         //print each position on the board, uncomment this for debugging if necessary
-		/*
-		System.out.println("board:");
-		System.out.println("board slots: "+board.size());
-		for (int i=0;i<board.size();i++)
-		{
-			board.get(i).printPosition();
-		}
-		*/
+		
+//		System.out.println("board:");
+//		System.out.println("board slots: "+targetBoard.size());
+//		for (int i=0;i<targetBoard.size();i++)
+//		{
+//			targetBoard.get(i).printPosition();
+//		}
+		
 
         //print in "graphical" display
         for (int i=0;i<4;i++)
@@ -305,9 +305,12 @@ public class humanInterface {
             {
                 if(targetBoard.get(i).state==0)
                 {
+                	
                     targetBoard.get(i).state = player;
                     System.out.println(" ======Player"+ player + " ========= ");
+                    
                     printBoardTicTacToe(targetBoard);
+                    
 
                     return true;
                 }

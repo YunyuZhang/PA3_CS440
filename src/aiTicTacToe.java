@@ -16,7 +16,7 @@ public class aiTicTacToe {
 		return board.get(index).state;
 	}
 
-	private List<positionTicTacToe> deepCopyATicTacToeBoard(List<positionTicTacToe> board)
+	private static List<positionTicTacToe> deepCopyATicTacToeBoard(List<positionTicTacToe> board)
 	{
 		//deep copy of game boards
 		List<positionTicTacToe> copiedBoard = new ArrayList<positionTicTacToe>();
@@ -46,6 +46,7 @@ public class aiTicTacToe {
 							myNextMove.z = board.get(i).z;
 							maxScore = move;
 						}
+						
 
 
 
@@ -59,6 +60,9 @@ public class aiTicTacToe {
 //				myNextMove = new positionTicTacToe(x,y,z);
 			}while(getStateOfPositionFromBoard(myNextMove,board)!=0);
 		//System.out.println(calcHeuristic(board,myNextMove,player));
+		
+		printBoardScores(board, player);
+		myNextMove.printPosition();
 		return myNextMove;
 			
 		
@@ -288,28 +292,26 @@ public class aiTicTacToe {
 		return count;
 	}
 	
-	public static int ultimateHeuristic(List<positionTicTacToe> board) {
+	public static int ultimateHeuristic(List<positionTicTacToe> board, int player) {
 		int enemy;
 		
-//		if(player == 1) enemy = 2;
-//		else enemy = 1;
+		if(player == 1) enemy = 2;
+		else enemy = 1;
 
-		int player = 1;
-		enemy = 2;
 		
 		if(hasWon(board, player)) {
-			return 100;
+			return 1000;
 		}
 		
 		if(hasWon(board, enemy)) {
-			return -100;
+			return -1000;
 		}
 		
 		int count = totalUnblockedLines(board, player);
 		
 		// WinPoints and lossPoints are lines where we about to win or lose
-		int winPoints = possibleWinLines(board, player).size() * 5;
-		int lossPoints = possibleWinLines(board, enemy).size() * -2;
+		int winPoints = possibleWinLines(board, player).size() * 0;
+		int lossPoints = possibleWinLines(board, enemy).size() * -5;
 
 		
 		int result = count + winPoints + lossPoints;
@@ -415,12 +417,18 @@ public class aiTicTacToe {
 
 		Integer positive_Inf = Integer.MAX_VALUE;
 		Integer negative_Inf = Integer.MIN_VALUE;
-		if(depth == 0 || !hasSpaceLeft(board) || hasWon(board,player) || hasWon(board,3-player)){
-
+		if(depth == 0 || !hasSpaceLeft(board)){
+			if(hasWon(board,player)) {
+				return 1000;
+			}
+			
+			if(hasWon(board,3-player)) {
+				return -1000;
+			}
 
 			
-			System.out.println(ultimateHeuristic(board));
-			return ultimateHeuristic(board);
+			//System.out.println(ultimateHeuristic(board));
+			return ultimateHeuristic(board, player);
 
 		}
 		if (player ==1){
@@ -628,11 +636,71 @@ public class aiTicTacToe {
 	{
 		player = setPlayer;
 	}
+	
+	
+	
+	
+	public static void printBoardScores(List<positionTicTacToe> board, int player) {
+		
+		for (int i=0;i<4;i++)
+		{
+			System.out.println("level(z) "+i);
+			for(int j=0;j<4;j++)
+			{
+				System.out.print("["); // boundary
+				for(int k=0;k<4;k++)
+				{
+					int index = i*16+j*4+k;
+					//positionTicTacToe temp = new positionTicTacToe(i, j, k, 1);
+					List<positionTicTacToe> tempBoard = new ArrayList<>();
+					tempBoard = deepCopyATicTacToeBoard(board);
+					if (tempBoard.get(index).state == 0) {
+						tempBoard.get(index).state = player;
+					}
+					
+					System.out.print(" "); 
+					System.out.print(ultimateHeuristic(tempBoard, player));
+					System.out.print(" "); //print cross "X" for position marked by player 1
+					//tempBoard.get(index).state = 0;
+					if(k==3)
+					{
+						System.out.print("]"); // boundary
+						System.out.println();
+					}
+					
+					
+				}
+
+			}
+			System.out.println();
+		}
+	}
+	
 
 	public static void main(String[] args) {
+		
+		List<positionTicTacToe> board = new ArrayList<>();
+		board = runTicTacToe.createTicTacToeBoard();
+		
+		
+		positionTicTacToe x1 = new positionTicTacToe(1,1,1,-1);
+		positionTicTacToe o1 = new positionTicTacToe(0,0,2,-1);
+		
+		runTicTacToe.printBoardTicTacToe(board);
+		printBoardScores(board, 1);
+		runTicTacToe.makeMove(x1, 1, board);
+		
+		
+		runTicTacToe.printBoardTicTacToe(board);
+		printBoardScores(board, 2);
+		runTicTacToe.makeMove(o1, 2, board);
+		
+		runTicTacToe.printBoardTicTacToe(board);
+		printBoardScores(board, 1);
+		
 
 		//initializeWinningLines();
-//		positionTicTacToe test_position1 = new positionTicTacToe(0,3,2,-1);
+//		
 //		positionTicTacToe test_position2 = new positionTicTacToe(1,1,1,-1);
 
 		//System.out.println(possibleWinLines(test_position1));

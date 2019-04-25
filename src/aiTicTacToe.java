@@ -4,6 +4,7 @@ public class aiTicTacToe {
 	public int player; //1 for player 1 and 2 for player 2
 
 	public static List<List<positionTicTacToe>> wl = initializeWinningLines();
+	public ArrayList<Long> total_time_list = new ArrayList<Long>();
 
 	//public static int spaceLeft = 32;
 
@@ -29,8 +30,9 @@ public class aiTicTacToe {
 	public positionTicTacToe myAIAlgorithm(List<positionTicTacToe> board, int player)
 	{
 		//TODO: this is where you are going to implement your AI algorithm to win the game. The default is an AI randomly choose any available move.
+
 		positionTicTacToe myNextMove = new positionTicTacToe(0,0,0);
-		
+		final long startTime = System.currentTimeMillis();
 		do
 			{
 				int maxScore = Integer.MIN_VALUE;
@@ -61,8 +63,14 @@ public class aiTicTacToe {
 			}while(getStateOfPositionFromBoard(myNextMove,board)!=0);
 		//System.out.println(calcHeuristic(board,myNextMove,player));
 		
-		printBoardScores(board, player);
-		myNextMove.printPosition();
+		//printBoardScores(board, player);
+		//myNextMove.printPosition();
+		final long endTime = System.currentTimeMillis();
+
+		long runtime = endTime - startTime;
+		total_time_list.add(runtime);
+		System.out.println("move takes " + runtime/10000f + "seconds");
+
 		return myNextMove;
 			
 		
@@ -675,6 +683,7 @@ public class aiTicTacToe {
 			System.out.println();
 		}
 	}
+
 	
 
 	public static void main(String[] args) {

@@ -61,15 +61,33 @@ In this programming assignment, we are supposed implement an AI algorithm for Qu
 <p>Give a concise description of the implemented method. For example, you might
   describe the motivation of your idea, the algorithmic steps of your methods, or
   the mathematical formulation of your method. 
+
+ MiniMax pseudo-code:<br/>
+ <img src="minimax.png" width="400" height="400">
+ <br/> image credit: https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-4-alpha-beta-pruning/
+ <br/>
+ <br/>Structure of myAIalgorithm:
+<br/><img src="myAIalgo.png" width="600" height="200">
+
+ <br/>image credit to: https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-3-tic-tac-toe-ai-finding-optimal-move/
+
+
 </p>
 
 <p>
 Briefly outline the functions you created in your code to carry out the
 algorithmic steps you described earlier.
+<ul>
+  <li>ultimateheuristic(board,depth,player,alpha,beta);</li> 
+  <li> new_minimax(): This function takes 4 inputs: board,depth, player,alpha and beta. Board and player are used to calculate the heuristic value at the leaf node. Depth is for look ahead. alpha and beta are for alpha-beta purning. The function will generate all the possible moves by the player, evaluate all the possible boards and return the best score of the board.</li>
+  <li>possibleWinLines(board,player): This function take two inputs: board and player. It will return all the possible winning combinations based on the current board for a certain player.</li>
+  <li>almostWinInLine(board, position_list, player): This is a helper function which takes 3 inputs. This function will return whether a player has 3 pieces placed on a winning row already, and there is no enemy's move on that row.</li>
+  <li>hasWon(board,player): This function will return whether a player has already won.</li>
+</ul>>
 
-<br/>ultimateheuristic(); 
-<br/> new_minimax(): This function takes 4 inputs: board,depth, player,alpha and beta. Board and player are used to calculate the heuristic value at the leaf node. Depth is for look ahead. alpha and beta are for alpha-beta purning. The function will generate all the possible moves by the player, evaluate all the possible boards and return the best score of the board.
-<br/>unblockedLines() .......
+
+
+ .......
 
 </p>
 

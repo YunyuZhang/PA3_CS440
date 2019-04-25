@@ -238,7 +238,7 @@ public class runTicTacToe {
 	public void printAllWinningLines()
 	{
 		//print all winning lines to help understand in what cases will any player win
-		System.out.println(winningLines.size());
+		//System.out.println(winningLines.size());
 		for (int i=0;i<winningLines.size();i++)
 		{
 			System.out.println("Winning Line "+i+":");
@@ -307,8 +307,8 @@ public class runTicTacToe {
 				if(targetBoard.get(i).state==0)
 				{
 					targetBoard.get(i).state = player;
-					printBoardTicTacToe(targetBoard);
-                    System.out.println("================");
+					//printBoardTicTacToe(targetBoard);
+                    //System.out.println("================");
 					return true;
 				}
 				else
@@ -337,7 +337,7 @@ public class runTicTacToe {
 			}
 			else if(turn==2)
 			{//debug
-				positionTicTacToe player2NextMove = gua.myAIAlgorithm1(board,2); //2 stands for player 2
+				positionTicTacToe player2NextMove = ai2.myAIAlgorithm(board,2); //2 stands for player 2
 				if(makeMove(player2NextMove,2,board))
 					turn = 1;
 			}
@@ -354,6 +354,7 @@ public class runTicTacToe {
 			//game ends, player 1 wins 
 			System.out.println("Player1 Wins");
 			printBoardTicTacToe(board);
+			System.out.println("P1 average time " + average(ai1.total_time_list)/1000);
 			return 1;
 
 		}
@@ -362,6 +363,7 @@ public class runTicTacToe {
 			//game ends, player 2 wins
 			System.out.println("Player2 Wins");
 			printBoardTicTacToe(board);
+			System.out.println("P1 average time " + average(ai1.total_time_list)/1000);
 			return 2;
 		}
 		else if(result==-1)
@@ -369,15 +371,26 @@ public class runTicTacToe {
 			//game ends, it's a draw 
 			System.out.println("This is a draw.");
 			printBoardTicTacToe(board);
+			System.out.println("P1 average time " + average(ai1.total_time_list)/1000);
 			return -1;
 		}
 		else
 		{
 			//exception occurs, stop
 			System.out.println("Error!");
+			System.out.println("P1 average time " + average(ai1.total_time_list)/1000);
 			return -10;
 		}
 		
+	}
+	public static Long average(ArrayList<Long> time_list){
+		long sumTime = 0;
+		for(long each_time: time_list){
+			sumTime += each_time;
+		}
+
+		return sumTime/time_list.size();
+
 	}
 	
 
@@ -387,21 +400,22 @@ public class runTicTacToe {
 	public static void main(String[] args) {		
 
 		//run game loop
-//        int player1Win = 0;
-//        int player2Win =0;
-//        for(int i =0;i< 100;i ++){
-//            runTicTacToe rttt = new runTicTacToe();
-//            int result = rttt.run();
-//            if (result == 1)
-//                player1Win ++;
-//            if(result ==2)
-//                player2Win++;
-//
-//        }
-//        System.out.println("player 1 win " + player1Win + " player 2 win "+ player2Win);
+        int player1Win = 0;
+        int player2Win =0;
+        for(int i =0;i< 10;i ++){
+            runTicTacToe rttt = new runTicTacToe();
+            int result = rttt.run();
+            if (result == 1)
+                player1Win ++;
+            if(result ==2)
+                player2Win++;
 
-        runTicTacToe rttt = new runTicTacToe();
-        rttt.run();
+        }
+        System.out.println("player 1 win " + player1Win + " player 2 win "+ player2Win);
+
+
+//        runTicTacToe rttt = new runTicTacToe();
+//        rttt.run();
 
 
 

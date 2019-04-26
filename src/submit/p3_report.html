@@ -79,7 +79,7 @@ Briefly outline the functions you created in your code to carry out the
 algorithmic steps you described earlier.
 <ul>
   <li>ultimateheuristic(board,depth,player,alpha,beta);</li> 
-  <li> new_minimax(): This function takes 4 inputs: board,depth, player,alpha and beta. Board and player are used to calculate the heuristic value at the leaf node. Depth is for look ahead. alpha and beta are for alpha-beta purning. The function will generate all the possible moves by the player, evaluate all the possible boards and return the best score of the board.</li>
+  <li> new_minimax(): This function takes 4 inputs: board,depth, player,alpha and beta. Board and player are used to calculate the heuristic value at the leaf node. Depth is for look ahead. alpha and beta are for alpha-beta purning. The function will generate all the possible moves by the player, evaluate all the possible boards and return the best score of the board. By using alpha-beta purning, we can make ou program faster by cutting branches of the tree.</li>
   <li>possibleWinLines(board,player): This function take two inputs: board and player. It will return all the possible winning combinations based on the current board for a certain player.</li>
   <li>almostWinInLine(board, position_list, player): This is a helper function which takes 3 inputs. This function will return whether a player has 3 pieces placed on a winning row already, and there is no enemy's move on that row.</li>
   <li>hasWon(board,player): This function will return whether a player has already won.</li>
@@ -162,6 +162,8 @@ failures/limitations of your work?</li>
 <p>
 Based on your discussion, what are your conclusions?  What is your
 main message?
+
+In general, we made our own heuristic function to evaluate the whole board. Then we used minimax and alpha-beta purning algorithms to make the decisions and improve the performance of the system.
 </p>
 
 

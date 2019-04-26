@@ -331,13 +331,13 @@ public class runTicTacToe {
 		{
 			if(turn==1)
 			{
-				positionTicTacToe player1NextMove = ai1.myAIAlgorithm(board,1); //1 stands for player 1
+				positionTicTacToe player1NextMove = ai1.myAIAlgorithm(board,1,1); //1 stands for player 1
 				if(makeMove(player1NextMove,1,board))
 					turn = 2;
 			}
 			else if(turn==2)
 			{//debug
-				positionTicTacToe player2NextMove = ai2.myAIAlgorithm(board,2); //2 stands for player 2
+				positionTicTacToe player2NextMove = gua.myAIAlgorithm1(board,2); //2 stands for player 2
 				if(makeMove(player2NextMove,2,board))
 					turn = 1;
 			}

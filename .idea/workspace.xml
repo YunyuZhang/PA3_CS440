@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6bcf0aad-b27a-4e3a-816f-0c2557d09d6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/humanInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/humanInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/runTicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/runTicTacToe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/aiTicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PA3_CS440/aiTicTacToe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/runTicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PA3_CS440/runTicTacToe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aiTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aiTicTacToe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/runTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/runTicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/submit/p3_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/submit/p3_report.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,25 +26,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="3" />
+          <entry key="java" value="4" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="3" />
+          <entry key="JAVA" value="4" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="509" />
+          <entry key="java" value="539" />
           <entry key="xml" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="509" />
+          <entry key="JAVA" value="539" />
           <entry key="XML" value="27" />
         </counts>
       </usages-collector>
@@ -50,11 +52,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="455" lean-forward="true" selection-start-line="455" selection-end-line="455" />
+            <state relative-caret-position="337">
+              <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
               <folding>
                 <element signature="e#236#242#0" expanded="true" />
               </folding>
@@ -62,11 +64,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gua.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="859">
-              <caret line="375" column="9" lean-forward="true" selection-start-line="375" selection-start-column="9" selection-end-line="375" selection-end-column="9" />
+            <state relative-caret-position="308">
+              <caret line="339" column="78" selection-start-line="339" selection-start-column="78" selection-end-line="339" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -95,6 +106,8 @@
       <find>run()</find>
       <find>ul</find>
       <find>average</find>
+      <find>aver</find>
+      <find>myAI</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -103,9 +116,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/aiTicTacToe.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/runTicTacToe.java" />
+        <option value="$PROJECT_DIR$/src/aiTicTacToe.java" />
       </list>
     </option>
   </component>
@@ -144,7 +157,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556239803366" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556242546918" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -178,12 +191,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556226152018</updated>
-      <workItem from="1556226159955" duration="5927000" />
+      <workItem from="1556226159955" duration="6739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5927000" />
+    <option name="totallyTimeSpent" value="6739000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -194,7 +207,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15390879" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15390879" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.43037975" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -203,7 +216,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2517581" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -240,20 +253,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
+    <entry file="file://$PROJECT_DIR$/src/gua.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="455" lean-forward="true" selection-start-line="455" selection-end-line="455" />
-          <folding>
-            <element signature="e#236#242#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="859">
-          <caret line="375" column="9" lean-forward="true" selection-start-line="375" selection-start-column="9" selection-end-line="375" selection-end-column="9" />
+        <state relative-caret-position="308">
+          <caret line="339" column="78" selection-start-line="339" selection-start-column="78" selection-end-line="339" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+          <folding>
+            <element signature="e#236#242#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

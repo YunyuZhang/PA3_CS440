@@ -27,7 +27,7 @@ public class aiTicTacToe {
 		}
 		return copiedBoard;
 	}
-	public positionTicTacToe myAIAlgorithm(List<positionTicTacToe> board, int player)
+	public positionTicTacToe myAIAlgorithm(List<positionTicTacToe> board, int player,int lookahead)
 	{
 		//TODO: this is where you are going to implement your AI algorithm to win the game. The default is an AI randomly choose any available move.
 
@@ -41,7 +41,7 @@ public class aiTicTacToe {
 
 						List<positionTicTacToe> copyBoard = deepCopyATicTacToeBoard(board);
 						copyBoard.get(i).state = player;
-						int move = new_minmax(copyBoard,2,player,Integer.MIN_VALUE,Integer.MAX_VALUE);
+						int move = new_minmax(copyBoard,lookahead,player,Integer.MIN_VALUE,Integer.MAX_VALUE);
 						if(move > maxScore){
 							myNextMove.x = board.get(i).x;
 							myNextMove.y = board.get(i).y;
@@ -69,7 +69,6 @@ public class aiTicTacToe {
 
 		long runtime = endTime - startTime;
 		total_time_list.add(runtime);
-		System.out.println("move takes " + runtime/10000f + "seconds");
 
 		return myNextMove;
 			

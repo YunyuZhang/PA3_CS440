@@ -337,7 +337,7 @@ public class runTicTacToe {
 			}
 			else if(turn==2)
 			{//debug
-				positionTicTacToe player2NextMove = ai2.myAIAlgorithm(board,2); //2 stands for player 2
+				positionTicTacToe player2NextMove = guaAi.myAIAlgorithm1(board,2); //2 stands for player 2
 				if(makeMove(player2NextMove,2,board))
 					turn = 1;
 			}
@@ -404,7 +404,7 @@ public class runTicTacToe {
 		//run game loop
         int player1Win = 0;
         int player2Win =0;
-        for(int i =0;i< 1;i ++){
+        for(int i =0;i< 10;i ++){
             runTicTacToe rttt = new runTicTacToe();
             int result = rttt.run();
             if (result == 1)

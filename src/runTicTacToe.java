@@ -337,7 +337,11 @@ public class runTicTacToe {
 			}
 			else if(turn==2)
 			{//debug
+<<<<<<< HEAD
 				positionTicTacToe player2NextMove = ai2.myAIAlgorithm(board,1,0); //2 stands for player 2
+=======
+				positionTicTacToe player2NextMove = guaAi.myAIAlgorithm1(board,2); //2 stands for player 2
+>>>>>>> 247c8ba78165bc7d0daaf166cdf44238a3498552
 				if(makeMove(player2NextMove,2,board))
 					turn = 1;
 			}
@@ -404,8 +408,12 @@ public class runTicTacToe {
 		//run game loop
         int player1Win = 0;
         int player2Win =0;
+<<<<<<< HEAD
         int numberofGame = 100;
         for(int i =0;i< numberofGame;i++){
+=======
+        for(int i =0;i< 10;i ++){
+>>>>>>> 247c8ba78165bc7d0daaf166cdf44238a3498552
             runTicTacToe rttt = new runTicTacToe();
             int result = rttt.run();
             if (result == 1)

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bcf0aad-b27a-4e3a-816f-0c2557d09d6d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/aiTicTacToe.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aiTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aiTicTacToe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/humanInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/humanInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/runTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/runTicTacToe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/submit/p3_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/submit/p3_report.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,28 +52,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="43" column="81" selection-start-line="43" selection-start-column="81" selection-end-line="43" selection-end-column="81" />
+            <state relative-caret-position="390">
+              <caret line="78" column="50" lean-forward="true" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
               <folding>
                 <element signature="e#236#242#0" expanded="true" />
-                <element signature="e#4186#4211#0" expanded="true" />
-                <element signature="e#12154#12163#0" expanded="true" />
-                <element signature="e#15995#16020#0" expanded="true" />
-                <element signature="e#16199#16218#0" expanded="true" />
-                <element signature="e#16635#16654#0" expanded="true" />
-                <element signature="e#17071#17090#0" expanded="true" />
-                <element signature="e#17508#17527#0" expanded="true" />
-                <element signature="e#17907#17926#0" expanded="true" />
-                <element signature="e#18306#18325#0" expanded="true" />
-                <element signature="e#18743#18762#0" expanded="true" />
-                <element signature="e#19142#19161#0" expanded="true" />
-                <element signature="e#19541#19560#0" expanded="true" />
-                <element signature="e#19934#19953#0" expanded="true" />
-                <element signature="e#21654#21655#0" expanded="true" />
-                <element signature="e#21679#21680#0" expanded="true" />
+                <element signature="e#1122#1141#0" expanded="true" />
+                <element signature="e#4533#4558#0" expanded="true" />
+                <element signature="e#15640#15649#0" expanded="true" />
+                <element signature="e#20299#20324#0" expanded="true" />
+                <element signature="e#20503#20522#0" expanded="true" />
+                <element signature="e#20939#20958#0" expanded="true" />
+                <element signature="e#21375#21394#0" expanded="true" />
+                <element signature="e#21812#21831#0" expanded="true" />
+                <element signature="e#22211#22230#0" expanded="true" />
+                <element signature="e#22610#22629#0" expanded="true" />
+                <element signature="e#23047#23066#0" expanded="true" />
+                <element signature="e#23446#23465#0" expanded="true" />
+                <element signature="e#23845#23864#0" expanded="true" />
+                <element signature="e#24238#24257#0" expanded="true" />
+                <element signature="e#25958#25959#0" expanded="true" />
+                <element signature="e#25983#25984#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,10 +98,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/submit/p3_report.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
+            <state relative-caret-position="74">
               <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
             </state>
           </provider>
@@ -207,7 +204,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556246150686" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556246484323" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -241,12 +238,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556226152018</updated>
-      <workItem from="1556226159955" duration="10016000" />
+      <workItem from="1556226159955" duration="10311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10016000" />
+    <option name="totallyTimeSpent" value="10311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="98" y="23" width="1219" height="739" extended-state="0" />
@@ -266,7 +263,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24840765" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.07165605" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -303,31 +300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="43" column="81" selection-start-line="43" selection-start-column="81" selection-end-line="43" selection-end-column="81" />
-          <folding>
-            <element signature="e#236#242#0" expanded="true" />
-            <element signature="e#4186#4211#0" expanded="true" />
-            <element signature="e#12154#12163#0" expanded="true" />
-            <element signature="e#15995#16020#0" expanded="true" />
-            <element signature="e#16199#16218#0" expanded="true" />
-            <element signature="e#16635#16654#0" expanded="true" />
-            <element signature="e#17071#17090#0" expanded="true" />
-            <element signature="e#17508#17527#0" expanded="true" />
-            <element signature="e#17907#17926#0" expanded="true" />
-            <element signature="e#18306#18325#0" expanded="true" />
-            <element signature="e#18743#18762#0" expanded="true" />
-            <element signature="e#19142#19161#0" expanded="true" />
-            <element signature="e#19541#19560#0" expanded="true" />
-            <element signature="e#19934#19953#0" expanded="true" />
-            <element signature="e#21654#21655#0" expanded="true" />
-            <element signature="e#21679#21680#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -344,8 +316,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/submit/p3_report.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
+        <state relative-caret-position="74">
           <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="78" column="50" lean-forward="true" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
+          <folding>
+            <element signature="e#236#242#0" expanded="true" />
+            <element signature="e#1122#1141#0" expanded="true" />
+            <element signature="e#4533#4558#0" expanded="true" />
+            <element signature="e#15640#15649#0" expanded="true" />
+            <element signature="e#20299#20324#0" expanded="true" />
+            <element signature="e#20503#20522#0" expanded="true" />
+            <element signature="e#20939#20958#0" expanded="true" />
+            <element signature="e#21375#21394#0" expanded="true" />
+            <element signature="e#21812#21831#0" expanded="true" />
+            <element signature="e#22211#22230#0" expanded="true" />
+            <element signature="e#22610#22629#0" expanded="true" />
+            <element signature="e#23047#23066#0" expanded="true" />
+            <element signature="e#23446#23465#0" expanded="true" />
+            <element signature="e#23845#23864#0" expanded="true" />
+            <element signature="e#24238#24257#0" expanded="true" />
+            <element signature="e#25958#25959#0" expanded="true" />
+            <element signature="e#25983#25984#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

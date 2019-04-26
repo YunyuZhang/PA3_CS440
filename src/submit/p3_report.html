@@ -68,12 +68,15 @@ We separated our approach to this problem in three separate blocks: designing th
   For the heuristic value calculation, we first had to design the rules for how we would rate a certain board state, and whether it would be beneficial or not for the AI player. We settled on counting the number of total available lines for the AI player in a board state as a starting point value, with the total available lines meaning the number of lines on the Tic-Tac-Toe board that contain our pieces and are not blocked by an enemy piece, with higher point values being more beneficial. After counting that, it adds extra points for the number of lines that is almost about to win and lines where the enemy is about to win but is instead blocked by the AI's pieces. However, there are two checks that override these point values: if the board state is such that the AI wins, then we immediately return 1000. If the enemy is about to win, then we immediately return -1000. That way, any board state that blocks the enemy from almost winning is immediately favored.
 </p>
 
- MiniMax pseudo-code:<br/>
+ <h3>MiniMax pseudo-code:</h3>
  <img src="minimax.png" width="400" height="400">
  <br/> image credit: https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-4-alpha-beta-pruning/
+
+ <p>
+ </p>
  <br/>
- <br/>Structure of myAIalgorithm:
-<br/><img src="myAIalgo.png" width="600" height="200">
+ <h3>Structure of myAIalgorithm:</h3>
+<img src="myAIalgo.png" width="600" height="200">
 
  <br/>image credit to: https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-3-tic-tac-toe-ai-finding-optimal-move/
 
@@ -81,27 +84,28 @@ We separated our approach to this problem in three separate blocks: designing th
 </p>
 
 <p>
-Briefly outline the functions you created in your code to carry out the
-algorithmic steps you described earlier.
 <ul>
-  <li>ultimateheuristic(board,depth,player,alpha,beta);</li> 
-  <li> new_minimax(): This function takes 4 inputs: board,depth, player,alpha and beta. Board and player are used to calculate the heuristic value at the leaf node. Depth is for look ahead. alpha and beta are for alpha-beta purning. The function will generate all the possible moves by the player, evaluate all the possible boards and return the best score of the board. By using alpha-beta purning, we can make ou program faster by cutting branches of the tree.</li>
-  <li>possibleWinLines(board,player): This function take two inputs: board and player. It will return all the possible winning combinations based on the current board for a certain player.</li>
-  <li>almostWinInLine(board, position_list, player): This is a helper function which takes 3 inputs. This function will return whether a player has 3 pieces placed on a winning row already, and there is no enemy's move on that row.</li>
+  <li>ultimateHeuristic(board,depth,player,alpha,beta): ultimateHeuristic returns a heuristic score of the current state of the board depending on the player. Higher score is more desirable.</li> 
+  <li> ultimateMinmax(): This function takes 4 inputs: board,depth, player,alpha and beta. Board and player are used to calculate the heuristic value at the leaf node. Depth is for look ahead. alpha and beta are for alpha-beta purning. The function will generate all the possible moves by the player, evaluate all the possible boards and return the best score of the board. By using alpha-beta purning, we can make ou program faster by cutting branches of the tree.</li>
+  <li>possibleWinLines(board,player): Takes a Tic-Tac-Toe board and a player and returns the list of rows that the player is about to win in.
+  </li>
+  <li>goodBlockLines(board, player): Takes a Tic-Tac-Toe board and a player and returns the list of rows that the player is able to block an about-to-win enemy in.
+  </li>
+  <li>totalUnblockedLines(board, player): totalUnblockedLines counts the total number of unblocked lines for a player in a Tic-Tac-Toe board.
+  </li>
+  <li>almostWinInLine(board, position_list, player): Takes a Tic-Tac-Toe board and a player and returns the list of rows that the player
+   * is about to win in.</li>
   <li>hasWon(board,player): This function will return whether a player has already won.</li>
+  <li>lineCount(board, position_list, player): LineCount counts the number of current positions that is currently occupied by the player. If another player also occupies the line, return 0.</li>
+  <li>printBoardScores(board, player): Helper code that prints the point value for a board if a piece were to be placed there by player. For debugging.</li>
 </ul>>
 
-
-
- .......
 
 </p>
 
 <hr>
 <h2>Experiments and Results</h2>
 <br>
-Describe your experiments, including the number of tests that you
-performed, and the relevant parameter values.
     <br><b>Experiment 1 : Our AI vs. Our AI with same level of lookahead of 2 for 100 times:</b>
     <br/>Result: Player 1 have a slightly higher winning rate. The average moving time for player 1 is 0.345 seconds.
     <br/> The output looks like this:
@@ -123,29 +127,28 @@ performed, and the relevant parameter values.
 
 <hr>
 <h2> Discussion </h2>
+<p>
+  <img src="discussionBoard2.png"> <img src="discussionScores2.png">
+  </p>
 
-<p> 
-Discuss your method and results:
-<ul>
-<li>What are the strengths and weaknesses of your method? </li>
-<li>Do your results show that your method is generally successful or
-     are there limitations? Describe what you expected to find in your
-     experiments, and how that differed or was confirmed by your
-     results. </li>
-<li>Potential future work. How could your method be improved?   What
-would you try (if you had more time) to overcome the
-failures/limitations of your work?</li> 
-</ul>
+<p>
+  This is a demonstration of our current heuristic code and how the AI decides its next move. The scores shown on the screen are generated using the printBoardScores() function. In this scenario, after the enemy has moved, our AI (X) would choose one of the middle spots on level 1 as it has the highest number of potential lines it can win from (7). After the enemy moves again, the resulting graph of the AI's potential moves and their scores have been shown above. The enemy could possibly win from a diagonal line by placing pieces at (3,3,0) and (2,2,1), but the look-ahead and heuristics don't consider this to be a threat and are instead prioritizng the positions that would give it the highest number of potential lines. 
+</p>
+
+<p>
+  <img src="discussionBoard.png"> <img src="discussionScores.png">
+  </p>
+
+<p>
+  Once the enemy puts a piece down at (2,2,1), then the heuristic values for the AI changes. Lookahead determines that it will definitely lose on the next turn if it doesn't play a piece on (3,3,0), so every other spot but that one is given the hueristic value of -1000. This way, the AI will be forced to play on the blocking spot to avoid losing, and it will have the same check for if it is about to win.
 </p>
 
 <hr>
 <h2> Conclusions </h2>
 
 <p>
-Based on your discussion, what are your conclusions?  What is your
-main message?
 
-In general, we made our own heuristic function to evaluate the whole board. Then we used minimax and alpha-beta purning algorithms to make the decisions and improve the performance of the system.
+We found this assignment to be challenging, in the sense that we had to design our own idea of what was a good point allocation for the AI, instead of relying on an established concept. We made our own heuristic function to evaluate the whole board, Then we used minmax and alpha-beta purning algorithms to make the decisions and improve the performance of the system. Overall, it was a very interesting project.
 </p>
 
 

@@ -803,5 +803,5 @@ public class aiTicTacToe {
 			System.out.println();
 		}
 	}
-	
+
 }

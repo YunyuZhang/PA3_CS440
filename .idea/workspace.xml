@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6bcf0aad-b27a-4e3a-816f-0c2557d09d6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/aiTicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PA3_CS440/aiTicTacToe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/submit/aiVsRandom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/submit/minimax.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/submit/myAIalgo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/submit/p3_report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/submit/sameLookahead.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/submit/totalResultTable.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aiTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aiTicTacToe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/submit/aiVsRandom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/submit/minimax.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/submit/myAIalgo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/submit/p3_report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/submit/sameLookahead.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/submit/totalResultTable.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,14 +30,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="1" />
+          <entry key="html" value="2" />
           <entry key="java" value="4" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="1" />
+          <entry key="HTML" value="2" />
           <entry key="JAVA" value="4" />
           <entry key="XML" value="2" />
         </counts>
@@ -64,8 +63,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="805" column="4" selection-start-line="805" selection-start-column="4" selection-end-line="805" selection-end-column="4" />
+            <state relative-caret-position="-2807">
+              <caret line="376" column="9" selection-start-line="376" selection-start-column="7" selection-end-line="376" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CS440_P3_Yunyu_Zhang/p3_report.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="52" column="404" selection-start-line="52" selection-start-column="404" selection-end-line="52" selection-end-column="404" />
             </state>
           </provider>
         </entry>
@@ -100,7 +108,6 @@
       <find>System</find>
       <find>===</find>
       <find>run()</find>
-      <find>ul</find>
       <find>average</find>
       <find>aver</find>
       <find>new_minmax</find>
@@ -118,8 +125,11 @@
       <find>System.out</find>
       <find>printPo</find>
       <find>printp</find>
-      <find>ult</find>
       <find>static</find>
+      <find>experiment</find>
+      <find>experiment p</find>
+      <find>ult</find>
+      <find>ul</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,7 +152,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="61" />
     <option name="y" value="23" />
     <option name="width" value="1219" />
@@ -167,6 +177,12 @@
               <item name="PA3_CS440" type="b2602c69:ProjectViewProjectNode" />
               <item name="PA3_CS440" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PA3_CS440" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PA3_CS440" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="CS440_P3_Yunyu_Zhang" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -224,18 +240,18 @@
       <option name="presentableId" value="Default" />
       <updated>1556226152018</updated>
       <workItem from="1556226159955" duration="12051000" />
-      <workItem from="1556248457076" duration="882000" />
+      <workItem from="1556248457076" duration="1611000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12933000" />
+    <option name="totallyTimeSpent" value="13662000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="23" width="1219" height="739" extended-state="0" />
+    <frame x="61" y="23" width="1219" height="739" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.102827765" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -244,7 +260,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -255,7 +271,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.43741208" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24935733" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -270,6 +286,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
@@ -307,10 +327,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CS440_P3_Yunyu_Zhang/p3_report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="52" column="404" selection-start-line="52" selection-start-column="404" selection-end-line="52" selection-end-column="404" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="805" column="4" selection-start-line="805" selection-start-column="4" selection-end-line="805" selection-end-column="4" />
+        <state relative-caret-position="-2807">
+          <caret line="376" column="9" selection-start-line="376" selection-start-column="7" selection-end-line="376" selection-end-column="9" />
         </state>
       </provider>
     </entry>

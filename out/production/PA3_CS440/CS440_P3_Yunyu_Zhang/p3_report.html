@@ -1,14 +1,14 @@
 
-<html>
-<head>
-<title> CS440 Homework Template: HW[3] Student Name [Caolan Disini;Yunyu Zhang]  </title>
+<html class="gr__cs_bu_edu"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title> CS440 Homework: HW3 Student Name: [Caolan Disini, Yunyu Zhang]  </title>
 <style>
 <!--
 body{
-font-family: 'Trebuchet MS', Verdana;
+font-family: "Verdana", cursive, sans-serif;
 }
 p{
-font-family: 'Trebuchet MS', Times;
+font-family: "Verdana", cursive, sans-serif;
 margin: 10px 10px 15px 20px;
 }
 h3{
@@ -37,30 +37,36 @@ margin:20px 0px 20px 0px;
 width="119" height="120"></a>
 </center>
 
-<h1>Assignment Title</h1>
+<h1> Programming Assignment 3</h1>
 <p> 
- CS 440/640 Programming assignment 1 <br>
+ CS 440/640 <br>
+ Team-members: <br>
  Yunyu Zhang <br>
  Caolan Disini <br>
-    Apr.25.2019 
+    Date: April 3, 2019
 </p>
 
 <div class="main-body">
 <hr>
 <h2> Problem Definition </h2>
 <p>
-Give a concise description of current problem.  What
-needs to be solved?  Why is the result useful?  Do you make any assumptions?
-What are the anticipated difficulties?
-
-In this programming assignment, we are supposed implement an AI algorithm for Qubic tic-tac-toe game. We make our own heuristic function to evaluate the current board and use minimax and alpha-beta purning algorithms to get the best move.
+Given some skeleton code that had an implementation of playing a 3D 4 x 4 x 4 Tic-Tac-Toe game, we needed to create an AI algorithm that could reliably play and beat an opponent using the minmax method, alpha-beta pruning, and our own heuristic value calculations. This way, the AI would be able to look ahead and calculate the best move to make, supposedly avoiding any possible losses. This experiment is important as it teaches us how to properly approach the concepts of developing the rules for an AI when tasked with making something approachable, which is a skill we will need the further we actually delve into Artificial Intelligence. </p>
+<p> The biggest difficulty in approaching this problem is having to design a heuristic function that will allocate an appropriate amount of points depending on the board state, while not neglecting the possibility that the player might win or lose in the future. 
 </p>
 
 <hr>
 <h2> Method and Implementation </h2>
 <p>Give a concise description of the implemented method. For example, you might
   describe the motivation of your idea, the algorithmic steps of your methods, or
-  the mathematical formulation of your method. 
+  the mathematical formulation of your method. </p>
+
+<p>
+We separated our approach to this problem in three separate blocks: designing the heuristic value calculation, the minmax method, and the alpha-beta pruning.
+</p>
+
+<p>
+  For the heuristic value calculation, we first had to design the rules for how we would rate a certain board state, and whether it would be beneficial or not for the AI player. We settled on counting the number of total available lines for the AI player in a board state as a starting point value, with the total available lines meaning the number of lines on the Tic-Tac-Toe board that contain our pieces and are not blocked by an enemy piece, with higher point values being more beneficial. After counting that, it adds extra points for the number of lines that is almost about to win and lines where the enemy is about to win but is instead blocked by the AI's pieces. However, there are two checks that override these point values: if the board state is such that the AI wins, then we immediately return 1000. If the enemy is about to win, then we immediately return -1000. That way, any board state that blocks the enemy from almost winning is immediately favored.
+</p>
 
  MiniMax pseudo-code:<br/>
  <img src="minimax.png" width="400" height="400">
@@ -146,17 +152,16 @@ In general, we made our own heuristic function to evaluate the whole board. Then
 <hr>
 <h2> Credits and Bibliography </h2>
 <p>
+
     <ul>
     <li>“Minimax Algorithm in Game Theory | Set 4 (Alpha-Beta Pruning).” GeeksforGeeks, 3 Dec. 2018, www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-4-alpha-beta-pruning/. </li>
     <li>“Minimax Algorithm in Game Theory | Set 3 (Tic-Tac-Toe AI - Finding Optimal Move).” GeeksforGeeks, 15 Oct. 2018, www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-3-tic-tac-toe-ai-finding-optimal-move/.</li>
     </ul>
-<p>
-Material on the web should include the url and date of access.
-</p>
 
 <p>
-Credit any joint work or discussions with your classmates. 
+Discussed the problem with Ajit Beeki.
 </p>
+
 <hr>
 </div>
 </body>

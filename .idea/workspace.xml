@@ -4,13 +4,13 @@
     <list default="true" id="6bcf0aad-b27a-4e3a-816f-0c2557d09d6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/aiTicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PA3_CS440/aiTicTacToe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/humanInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PA3_CS440/humanInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/runTicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PA3_CS440/runTicTacToe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/submit/p3_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PA3_CS440/submit/p3_report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aiTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aiTicTacToe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/humanInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/humanInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/runTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/runTicTacToe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/submit/p3_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/submit/p3_report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/submit/aiVsRandom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/submit/minimax.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/submit/myAIalgo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/submit/p3_report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/submit/sameLookahead.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/submit/totalResultTable.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,11 +61,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+            <state relative-caret-position="423">
+              <caret line="805" column="4" selection-start-line="805" selection-start-column="4" selection-end-line="805" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -73,17 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6255">
+            <state relative-caret-position="124">
               <caret line="417" column="24" selection-start-line="417" selection-start-column="19" selection-end-line="417" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/submit/p3_report.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="110" column="63" selection-start-line="110" selection-start-column="63" selection-end-line="110" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -128,6 +119,7 @@
       <find>printPo</find>
       <find>printp</find>
       <find>ult</find>
+      <find>static</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,8 +131,8 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/humanInterface.java" />
         <option value="$PROJECT_DIR$/src/runTicTacToe.java" />
-        <option value="$PROJECT_DIR$/src/aiTicTacToe.java" />
         <option value="$PROJECT_DIR$/src/submit/p3_report.html" />
+        <option value="$PROJECT_DIR$/src/aiTicTacToe.java" />
       </list>
     </option>
   </component>
@@ -232,12 +224,12 @@
       <option name="presentableId" value="Default" />
       <updated>1556226152018</updated>
       <workItem from="1556226159955" duration="12051000" />
-      <workItem from="1556248457076" duration="112000" />
+      <workItem from="1556248457076" duration="882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12163000" />
+    <option name="totallyTimeSpent" value="12933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="23" width="1219" height="739" extended-state="0" />
@@ -252,7 +244,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -294,13 +286,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6255">
-          <caret line="417" column="24" selection-start-line="417" selection-start-column="19" selection-end-line="417" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/humanInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6690">
@@ -308,17 +293,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
+    <entry file="file://$PROJECT_DIR$/src/submit/p3_report.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+        <state relative-caret-position="292">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/submit/p3_report.html">
+    <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="110" column="63" selection-start-line="110" selection-start-column="63" selection-end-line="110" selection-end-column="63" />
+        <state relative-caret-position="124">
+          <caret line="417" column="24" selection-start-line="417" selection-start-column="19" selection-end-line="417" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="805" column="4" selection-start-line="805" selection-start-column="4" selection-end-line="805" selection-end-column="4" />
         </state>
       </provider>
     </entry>

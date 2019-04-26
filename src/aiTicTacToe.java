@@ -803,51 +803,5 @@ public class aiTicTacToe {
 			System.out.println();
 		}
 	}
-
 	
-
-//	public static void main(String[] args) {
-//		
-//		List<positionTicTacToe> board = new ArrayList<>();
-//		board = runTicTacToe.createTicTacToeBoard();
-//		
-//		
-//		positionTicTacToe x1 = new positionTicTacToe(1,1,1,-1);
-//		positionTicTacToe o1 = new positionTicTacToe(0,0,3,-1);
-//		positionTicTacToe o2 = new positionTicTacToe(1,1,2,-1);
-//		positionTicTacToe o3 = new positionTicTacToe(2,2,1,-1);
-//		positionTicTacToe o4 = new positionTicTacToe(3,3,0,-1);
-//		
-//		//runTicTacToe.printBoardTicTacToe(board);
-//		//printBoardScores(board, 1);
-//		runTicTacToe.makeMove(x1, 1, board);
-//		
-//		
-//		//runTicTacToe.printBoardTicTacToe(board);
-//		//printBoardScores(board, 2);
-//		runTicTacToe.makeMove(o1, 2, board);
-//		
-//		//runTicTacToe.printBoardTicTacToe(board);
-//		//printBoardScores(board, 1);
-//		runTicTacToe.makeMove(o2, 2, board);
-//		
-//		runTicTacToe.makeMove(o3, 2, board);
-//		//runTicTacToe.makeMove(o4, 2, board);
-//		
-//		runTicTacToe.printBoardTicTacToe(board);
-//		printBoardScores(board, 1);
-//		System.out.println(goodBlockLines(board, 2));
-//		System.out.println(ultimateHeuristic(board, 1));
-//		
-//
-//		//initializeWinningLines();
-////		
-////		positionTicTacToe test_position2 = new positionTicTacToe(1,1,1,-1);
-//
-//		//System.out.println(possibleWinLines(test_position1));
-//
-//
-//
-//
-//	}
 }

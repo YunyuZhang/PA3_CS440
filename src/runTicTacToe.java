@@ -354,7 +354,7 @@ public class runTicTacToe {
 			//game ends, player 1 wins 
 			System.out.println("Player1 Wins");
 			printBoardTicTacToe(board);
-			System.out.println("P1 average time " + average(ai1.total_time_list)/1000);
+			System.out.println("Player average time " + average(ai1.total_time_list) + " seconds ");
 			return 1;
 
 		}
@@ -363,7 +363,7 @@ public class runTicTacToe {
 			//game ends, player 2 wins
 			System.out.println("Player2 Wins");
 			printBoardTicTacToe(board);
-			System.out.println("P1 average time " + average(ai1.total_time_list)/1000);
+			System.out.println("Player average time " + average(ai1.total_time_list)+ " seconds ");
 			return 2;
 		}
 		else if(result==-1)
@@ -371,25 +371,27 @@ public class runTicTacToe {
 			//game ends, it's a draw 
 			System.out.println("This is a draw.");
 			printBoardTicTacToe(board);
-			System.out.println("P1 average time " + average(ai1.total_time_list)/1000);
+			System.out.println("Player average time " + average(ai1.total_time_list)+ " seconds ");
 			return -1;
 		}
 		else
 		{
 			//exception occurs, stop
 			System.out.println("Error!");
-			System.out.println("P1 average time " + average(ai1.total_time_list)/1000);
+			System.out.println("Player average time " + average(ai1.total_time_list)+ " seconds ");
 			return -10;
 		}
 		
 	}
-	public static Long average(ArrayList<Long> time_list){
+	public static float average(ArrayList<Long> time_list){
 		long sumTime = 0;
 		for(long each_time: time_list){
 			sumTime += each_time;
 		}
 
-		return sumTime/time_list.size();
+		//System.out.println("sum " + sumTime+ " size " + time_list.size()+ " result " + sumTime/time_list.size()/1000.f);
+
+		return sumTime/time_list.size()/1000.f;
 
 	}
 	
@@ -402,7 +404,7 @@ public class runTicTacToe {
 		//run game loop
         int player1Win = 0;
         int player2Win =0;
-        for(int i =0;i< 10;i ++){
+        for(int i =0;i< 1;i ++){
             runTicTacToe rttt = new runTicTacToe();
             int result = rttt.run();
             if (result == 1)

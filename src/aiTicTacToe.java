@@ -26,39 +26,38 @@ public class aiTicTacToe {
 		}
 		return copiedBoard;
 	}
+	
 	public positionTicTacToe myAIAlgorithm(List<positionTicTacToe> board, int player)
 	{
 		//TODO: this is where you are going to implement your AI algorithm to win the game. The default is an AI randomly choose any available move.
 		positionTicTacToe myNextMove = new positionTicTacToe(0,0,0);
-		
-		do
-			{
-				int maxScore = Integer.MIN_VALUE;
-				for(int i = 0;i< board.size();i++){
-					if(board.get(i).state == 0){
+			int maxScore = Integer.MIN_VALUE;
+			for(int i = 0;i< board.size();i++){
+				if(board.get(i).state == 0){
 
-						List<positionTicTacToe> copyBoard = deepCopyATicTacToeBoard(board);
-						copyBoard.get(i).state = player;
-						int move = new_minmax(copyBoard,2,player,Integer.MIN_VALUE,Integer.MAX_VALUE);
-						if(move > maxScore){
-							myNextMove.x = board.get(i).x;
-							myNextMove.y = board.get(i).y;
-							myNextMove.z = board.get(i).z;
-							maxScore = move;
-						}
-						
-
-
-
-
+					List<positionTicTacToe> copyBoard = deepCopyATicTacToeBoard(board);
+					copyBoard.get(i).state = player;
+					int move = ultimateMinmax(copyBoard,1,player,true,Integer.MIN_VALUE,Integer.MAX_VALUE);
+					if(move > maxScore){
+						System.out.println(move);
+						myNextMove.x = board.get(i).x;
+						myNextMove.y = board.get(i).y;
+						myNextMove.z = board.get(i).z;
+						myNextMove.printPosition();
+						maxScore = move;
 					}
+					
+
+
+
+
 				}
+			}
 //				Random rand = new Random();
 //				int x = rand.nextInt(4);
 //				int y = rand.nextInt(4);
 //				int z = rand.nextInt(4);
 //				myNextMove = new positionTicTacToe(x,y,z);
-			}while(getStateOfPositionFromBoard(myNextMove,board)!=0);
 		//System.out.println(calcHeuristic(board,myNextMove,player));
 		
 		printBoardScores(board, player);
@@ -67,7 +66,7 @@ public class aiTicTacToe {
 			
 		
 	}
-
+	
 	public positionTicTacToe randomMove(List<positionTicTacToe> board, int player)
 	{
 		//TODO: this is where you are going to implement your AI algorithm to win the game. The default is an AI randomly choose any available move.
@@ -107,6 +106,20 @@ public class aiTicTacToe {
 		}
 		return possWinLines;
 	}
+	
+	public static int goodBlockLines(List<positionTicTacToe> board, int player){
+		int count = 0;
+
+		for(List<positionTicTacToe> winning_combination:wl){
+			//System.out.println(winning_combination);
+			if (almostWinInLine(board, winning_combination, player)){
+
+				count++;
+			}
+		}
+		return count;
+	}
+	
 	
 	public static boolean almostWinInLine(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player){
 
@@ -213,6 +226,28 @@ public class aiTicTacToe {
 		return count;
 	}
 	
+	public static boolean goodBlockCount(List<positionTicTacToe> board, List<positionTicTacToe> position_list, int player) {
+		int our_count = 0;
+		int enemy_count = 0;
+		int enemy = 3 - player;
+		
+		
+		for(positionTicTacToe position:position_list) {
+			if (getStateOfPositionFromBoard(position, board) == player){
+				our_count++;
+			}
+			else if (getStateOfPositionFromBoard(position, board) == enemy) {
+				enemy_count++;
+			}
+		}
+		
+		if(our_count == 1 && enemy_count == 3) {
+			return true;
+		}
+		
+		return false;
+	}
+	
 
 	
 	/* TODO: Hash out the actual heuristic values given by the calcHeuristic() function.
@@ -299,22 +334,26 @@ public class aiTicTacToe {
 		else enemy = 1;
 
 		
+
+		if(possibleWinLines(board, enemy).size() > 0 || hasWon(board, enemy)) {
+			return -1000;
+		}
+		
 		if(hasWon(board, player)) {
 			return 1000;
 		}
 		
-		if(hasWon(board, enemy)) {
-			return -1000;
-		}
 		
 		int count = totalUnblockedLines(board, player);
 		
 		// WinPoints and lossPoints are lines where we about to win or lose
-		int winPoints = possibleWinLines(board, player).size() * 0;
-		int lossPoints = possibleWinLines(board, enemy).size() * -5;
+		int winPoints = possibleWinLines(board, player).size() * 2;
+		int lossPoints = possibleWinLines(board, enemy).size() * -2;
+		int blockPoints = goodBlockLines(board, enemy) * 2;
+		
 
 		
-		int result = count + winPoints + lossPoints;
+		int result = count + winPoints + lossPoints + blockPoints;
 		
 
 		//System.out.println("before: "+ count);
@@ -412,35 +451,47 @@ public class aiTicTacToe {
 	}
 
 
-	public static int new_minmax(List<positionTicTacToe> board,int depth,int player,int alpha,int beta){
+	public static int ultimateMinmax(List<positionTicTacToe> board,int depth,int player, boolean maximizer, int alpha,int beta){
 		//https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-4-alpha-beta-pruning/
-
+		int enemy = 3 - player;
+		
 		Integer positive_Inf = Integer.MAX_VALUE;
 		Integer negative_Inf = Integer.MIN_VALUE;
+		
+		
+		if(hasWon(board,enemy)) {
+			return -1000;
+		}
+		
+		if(hasWon(board,player)) {
+			return 1000;
+		}
 		if(depth == 0 || !hasSpaceLeft(board)){
-			if(hasWon(board,player)) {
-				return 1000;
-			}
-			
-			if(hasWon(board,3-player)) {
-				return -1000;
-			}
-
-			
 			//System.out.println(ultimateHeuristic(board));
 			return ultimateHeuristic(board, player);
 
 		}
-		if (player ==1){
+		if (maximizer){
 			int bestValue = negative_Inf;
 
 			for(int i = 0;i< board.size();i++){
 				if(board.get(i).state == 0){
-					board.get(i).state = player;
-					int value = new_minmax(board,depth-1, 2,alpha,beta);
-					bestValue = Math.max(bestValue,value);
+					List<positionTicTacToe> copyBoard = deepCopyATicTacToeBoard(board);
+					copyBoard.get(i).state = player;
+					int value = ultimateMinmax(copyBoard,depth-1,player,false,alpha,beta);
+					if(value > bestValue) {
+						bestValue = value;
+						//System.out.print("The maximizer at depth " + depth + " is: " + bestValue + " ");
+						//board.get(i).printPosition();
+					}
+					
+					//bestValue = Math.max(bestValue,value);
+//					if(board.get(i).x == 0 && board.get(i).y == 1 && board.get(i).z == 0) {
+//						System.out.print("The maximizer at depth " + depth + " is: " + bestValue + " ");
+//						board.get(i).printPosition();
+//					}
 					alpha = Math.max(alpha,bestValue);
-					board.get(i).state = 0;
+					//board.get(i).state = 0;
 
 					if (beta <= alpha){
 						break;
@@ -457,11 +508,18 @@ public class aiTicTacToe {
 			int bestValue = positive_Inf;
 			for(int i = 0;i< board.size();i++){
 				if(board.get(i).state == 0){
-					board.get(i).state = player;
-					int value = new_minmax(board,depth-1,1,alpha,beta);
-					bestValue = Math.min(bestValue,value);
+					List<positionTicTacToe> copyBoard = deepCopyATicTacToeBoard(board);
+					copyBoard.get(i).state = enemy;
+					int value = ultimateMinmax(copyBoard,depth-1,player,false,alpha,beta);
+					if(value < bestValue) {
+						bestValue = value;
+						//System.out.print("The maximizer at depth " + depth + " is: " + bestValue + " ");
+						//board.get(i).printPosition();
+					}
+					//bestValue = Math.min(bestValue,value);
+
 					beta = Math.min(beta,bestValue);
-					board.get(i).state = 0;
+					//board.get(i).state = 0;
 					if (beta <= alpha){
 						break;
 					}
@@ -650,10 +708,9 @@ public class aiTicTacToe {
 				System.out.print("["); // boundary
 				for(int k=0;k<4;k++)
 				{
-					int index = i*16+j*4+k;
+					int index = j*16+k*4+i;
 					//positionTicTacToe temp = new positionTicTacToe(i, j, k, 1);
-					List<positionTicTacToe> tempBoard = new ArrayList<>();
-					tempBoard = deepCopyATicTacToeBoard(board);
+					List<positionTicTacToe> tempBoard = deepCopyATicTacToeBoard(board);
 					if (tempBoard.get(index).state == 0) {
 						tempBoard.get(index).state = player;
 					}
@@ -677,36 +734,48 @@ public class aiTicTacToe {
 	}
 	
 
-	public static void main(String[] args) {
-		
-		List<positionTicTacToe> board = new ArrayList<>();
-		board = runTicTacToe.createTicTacToeBoard();
-		
-		
-		positionTicTacToe x1 = new positionTicTacToe(1,1,1,-1);
-		positionTicTacToe o1 = new positionTicTacToe(0,0,2,-1);
-		
-		runTicTacToe.printBoardTicTacToe(board);
-		printBoardScores(board, 1);
-		runTicTacToe.makeMove(x1, 1, board);
-		
-		
-		runTicTacToe.printBoardTicTacToe(board);
-		printBoardScores(board, 2);
-		runTicTacToe.makeMove(o1, 2, board);
-		
-		runTicTacToe.printBoardTicTacToe(board);
-		printBoardScores(board, 1);
-		
-
-		//initializeWinningLines();
+//	public static void main(String[] args) {
 //		
-//		positionTicTacToe test_position2 = new positionTicTacToe(1,1,1,-1);
-
-		//System.out.println(possibleWinLines(test_position1));
-
-
-
-
-	}
+//		List<positionTicTacToe> board = new ArrayList<>();
+//		board = runTicTacToe.createTicTacToeBoard();
+//		
+//		
+//		positionTicTacToe x1 = new positionTicTacToe(1,1,1,-1);
+//		positionTicTacToe o1 = new positionTicTacToe(0,0,3,-1);
+//		positionTicTacToe o2 = new positionTicTacToe(1,1,2,-1);
+//		positionTicTacToe o3 = new positionTicTacToe(2,2,1,-1);
+//		positionTicTacToe o4 = new positionTicTacToe(3,3,0,-1);
+//		
+//		//runTicTacToe.printBoardTicTacToe(board);
+//		//printBoardScores(board, 1);
+//		runTicTacToe.makeMove(x1, 1, board);
+//		
+//		
+//		//runTicTacToe.printBoardTicTacToe(board);
+//		//printBoardScores(board, 2);
+//		runTicTacToe.makeMove(o1, 2, board);
+//		
+//		//runTicTacToe.printBoardTicTacToe(board);
+//		//printBoardScores(board, 1);
+//		runTicTacToe.makeMove(o2, 2, board);
+//		
+//		runTicTacToe.makeMove(o3, 2, board);
+//		//runTicTacToe.makeMove(o4, 2, board);
+//		
+//		runTicTacToe.printBoardTicTacToe(board);
+//		printBoardScores(board, 1);
+//		System.out.println(goodBlockLines(board, 2));
+//		System.out.println(ultimateHeuristic(board, 1));
+//		
+//
+//		//initializeWinningLines();
+////		
+////		positionTicTacToe test_position2 = new positionTicTacToe(1,1,1,-1);
+//
+//		//System.out.println(possibleWinLines(test_position1));
+//
+//
+//
+//
+//	}
 }

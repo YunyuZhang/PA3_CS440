@@ -337,7 +337,7 @@ public class runTicTacToe {
 			}
 			else if(turn==2)
 			{//debug
-				positionTicTacToe player2NextMove = guaAi.myAIAlgorithm1(board,2); //2 stands for player 2
+				positionTicTacToe player2NextMove = ai2.myAIAlgorithm(board,2); //2 stands for player 2
 				if(makeMove(player2NextMove,2,board))
 					turn = 1;
 			}
@@ -354,7 +354,7 @@ public class runTicTacToe {
 			//game ends, player 1 wins 
 			System.out.println("Player1 Wins");
 			printBoardTicTacToe(board);
-			System.out.println("Player average time " + average(ai1.total_time_list) + " seconds ");
+			System.out.println("Player average move time " + average(ai1.total_time_list) + " seconds ");
 			return 1;
 
 		}
@@ -363,7 +363,7 @@ public class runTicTacToe {
 			//game ends, player 2 wins
 			System.out.println("Player2 Wins");
 			printBoardTicTacToe(board);
-			System.out.println("Player average time " + average(ai1.total_time_list)+ " seconds ");
+			System.out.println("Player average move time " + average(ai1.total_time_list)+ " seconds ");
 			return 2;
 		}
 		else if(result==-1)
@@ -371,14 +371,14 @@ public class runTicTacToe {
 			//game ends, it's a draw 
 			System.out.println("This is a draw.");
 			printBoardTicTacToe(board);
-			System.out.println("Player average time " + average(ai1.total_time_list)+ " seconds ");
+			System.out.println("Player average move time  " + average(ai1.total_time_list)+ " seconds ");
 			return -1;
 		}
 		else
 		{
 			//exception occurs, stop
 			System.out.println("Error!");
-			System.out.println("Player average time " + average(ai1.total_time_list)+ " seconds ");
+			System.out.println("Player average move time  " + average(ai1.total_time_list)+ " seconds ");
 			return -10;
 		}
 		
@@ -404,16 +404,23 @@ public class runTicTacToe {
 		//run game loop
         int player1Win = 0;
         int player2Win =0;
-        for(int i =0;i< 10;i ++){
+        int numberofGame = 1;
+        for(int i =0;i< numberofGame;i++){
+
             runTicTacToe rttt = new runTicTacToe();
             int result = rttt.run();
             if (result == 1)
-                player1Win ++;
+                player1Win++;
             if(result ==2)
                 player2Win++;
 
         }
-        System.out.println("player 1 win " + player1Win + " player 2 win "+ player2Win);
+        System.out.println("Player 1 wins: " + player1Win);
+		System.out.println("Player 2 wins: " + player2Win);
+		System.out.println("Player 1 winning percentage:" + ((double) player1Win)/numberofGame);
+		System.out.println("Player 2 winning percentage:" + ((double) player2Win)/numberofGame);
+
+
 
 
 //        runTicTacToe rttt = new runTicTacToe();

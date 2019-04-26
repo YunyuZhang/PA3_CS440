@@ -52,11 +52,11 @@ public class aiTicTacToe {
 					copyBoard.get(i).state = player;
 					int move = ultimateMinmax(copyBoard,0,player,true,Integer.MIN_VALUE,Integer.MAX_VALUE);
 					if(move > maxScore){
-						System.out.println(move);
+						//System.out.println(move);
 						myNextMove.x = board.get(i).x;
 						myNextMove.y = board.get(i).y;
 						myNextMove.z = board.get(i).z;
-						myNextMove.printPosition();
+						//myNextMove.printPosition();
 						maxScore = move;
 					}
 
@@ -68,7 +68,7 @@ public class aiTicTacToe {
 
 		long runtime = endTime - startTime;
 		total_time_list.add(runtime);
-		System.out.println("move takes " + runtime/10000f + "seconds");
+		//System.out.println("move takes " + runtime/10000f + "seconds");
 
 		return myNextMove;
 	}

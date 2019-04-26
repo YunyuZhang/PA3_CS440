@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="6bcf0aad-b27a-4e3a-816f-0c2557d09d6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/humanInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/humanInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/runTicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/runTicTacToe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/aiTicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PA3_CS440/aiTicTacToe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/humanInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PA3_CS440/humanInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/runTicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PA3_CS440/runTicTacToe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PA3_CS440/submit/p3_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PA3_CS440/submit/p3_report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aiTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aiTicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/humanInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/humanInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/runTicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/runTicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/submit/p3_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/submit/p3_report.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,55 +23,67 @@
     <session id="-444268409">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="3" />
+          <entry key="html" value="1" />
+          <entry key="java" value="4" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="3" />
+          <entry key="HTML" value="1" />
+          <entry key="JAVA" value="4" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="509" />
+          <entry key="html" value="515" />
+          <entry key="java" value="755" />
           <entry key="xml" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="509" />
+          <entry key="HTML" value="515" />
+          <entry key="JAVA" value="755" />
           <entry key="XML" value="27" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="455" lean-forward="true" selection-start-line="455" selection-end-line="455" />
-              <folding>
-                <element signature="e#236#242#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="106">
+              <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6255">
+              <caret line="417" column="24" selection-start-line="417" selection-start-column="19" selection-end-line="417" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
+        <entry file="file://$PROJECT_DIR$/src/submit/p3_report.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="859">
-              <caret line="375" column="9" lean-forward="true" selection-start-line="375" selection-start-column="9" selection-end-line="375" selection-end-column="9" />
+            <state relative-caret-position="322">
+              <caret line="110" column="63" selection-start-line="110" selection-start-column="63" selection-end-line="110" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -74,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/humanInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5825">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="6690">
+              <caret line="446" column="20" selection-start-line="446" selection-start-column="10" selection-end-line="446" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -90,11 +107,27 @@
       <find>ai2.</find>
       <find>almostWinInLine</find>
       <find>System</find>
-      <find>System.out</find>
       <find>===</find>
       <find>run()</find>
       <find>ul</find>
       <find>average</find>
+      <find>aver</find>
+      <find>new_minmax</find>
+      <find>new</find>
+      <find>new_</find>
+      <find>gua</find>
+      <find>move</find>
+      <find>run</find>
+      <find>HEAD</find>
+      <find>head</find>
+      <find>ai1</find>
+      <find>myAIAlgorithm</find>
+      <find>myAI</find>
+      <find>move takes</find>
+      <find>System.out</find>
+      <find>printPo</find>
+      <find>printp</find>
+      <find>ult</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -103,9 +136,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/aiTicTacToe.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/humanInterface.java" />
         <option value="$PROJECT_DIR$/src/runTicTacToe.java" />
+        <option value="$PROJECT_DIR$/src/aiTicTacToe.java" />
+        <option value="$PROJECT_DIR$/src/submit/p3_report.html" />
       </list>
     </option>
   </component>
@@ -115,11 +150,19 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="61" />
+    <option name="y" value="23" />
+    <option name="width" value="1219" />
+    <option name="height" value="739" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -137,14 +180,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556239803366" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556248297870" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -158,7 +199,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Java Scratch.runTicTacToe">
+    <configuration name="humanInterface" type="Java Scratch" factoryName="Java Scratch">
+      <option name="MAIN_CLASS_NAME" value="humanInterface" />
+      <module name="PA3_CS440" />
+      <option name="SCRATCH_FILE_URL" value="file://$PROJECT_DIR$/src/humanInterface.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="runTicTacToe" type="Java Scratch" factoryName="Java Scratch">
       <option name="MAIN_CLASS_NAME" value="runTicTacToe" />
       <module name="PA3_CS440" />
@@ -167,6 +216,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Java Scratch.humanInterface" />
+      <item itemvalue="Java Scratch.runTicTacToe" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -178,45 +231,46 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556226152018</updated>
-      <workItem from="1556226159955" duration="5927000" />
+      <workItem from="1556226159955" duration="12051000" />
+      <workItem from="1556248457076" duration="112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5927000" />
+    <option name="totallyTimeSpent" value="12163000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="61" y="23" width="1219" height="739" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15390879" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.102827765" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" weight="0.43037975" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" weight="0.32961783" />
-      <window_info anchor="bottom" id="Terminal" weight="0.49085796" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32961783" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.49085796" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.43741208" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,27 +287,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/humanInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/gua.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5825">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="455" lean-forward="true" selection-start-line="455" selection-end-line="455" />
-          <folding>
-            <element signature="e#236#242#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/runTicTacToe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="859">
-          <caret line="375" column="9" lean-forward="true" selection-start-line="375" selection-start-column="9" selection-end-line="375" selection-end-column="9" />
+        <state relative-caret-position="6255">
+          <caret line="417" column="24" selection-start-line="417" selection-start-column="19" selection-end-line="417" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/humanInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6690">
+          <caret line="446" column="20" selection-start-line="446" selection-start-column="10" selection-end-line="446" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aiTicTacToe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/submit/p3_report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="110" column="63" selection-start-line="110" selection-start-column="63" selection-end-line="110" selection-end-column="63" />
         </state>
       </provider>
     </entry>
